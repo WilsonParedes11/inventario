@@ -166,7 +166,7 @@
                                     </path>
                                     <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
                                 </svg>
-                                Account
+                                Cuenta
                             </a>
                             <form action="{{ route('logout') }}" method="post">
                                 @csrf
@@ -181,7 +181,7 @@
                                         <path d="M9 12h12l-3 -3" />
                                         <path d="M18 15l3 -3" />
                                     </svg>
-                                    Logout
+                                    Cerrar sesión
                                 </button>
                             </form>
                         </div>
@@ -265,7 +265,7 @@
                                         </svg>
                                     </span>
                                     <span class="nav-link-title">
-                                        {{ __('Products') }}
+                                        {{ __('Productos') }}
                                     </span>
                                 </a>
                             </li>
@@ -290,23 +290,23 @@
                                         </svg>
                                     </span>
                                     <span class="nav-link-title">
-                                        {{ __('Orders') }}
+                                        {{ __('Pedidos') }}
                                     </span>
                                 </a>
                                 <div class="dropdown-menu">
                                     <div class="dropdown-menu-columns">
                                         <div class="dropdown-menu-column">
                                             <a class="dropdown-item" href="{{ route('orders.index') }}">
-                                                {{ __('All') }}
+                                                {{ __('Todos') }}
                                             </a>
                                             <a class="dropdown-item" href="{{ route('orders.complete') }}">
-                                                {{ __('Completed') }}
+                                                {{ __('Completos') }}
                                             </a>
                                             <a class="dropdown-item" href="{{ route('orders.pending') }}">
-                                                {{ __('Pending') }}
+                                                {{ __('Pendientes') }}
                                             </a>
                                             <a class="dropdown-item" href="{{ route('due.index') }}">
-                                                {{ __('Due') }}
+                                                {{ __('vencidos') }}
                                             </a>
                                         </div>
                                     </div>
@@ -333,22 +333,22 @@
                                         </svg>
                                     </span>
                                     <span class="nav-link-title">
-                                        {{ __('Purchases') }}
+                                        {{ __('Compras') }}
                                     </span>
                                 </a>
                                 <div class="dropdown-menu">
                                     <div class="dropdown-menu-columns">
                                         <div class="dropdown-menu-column">
                                             <a class="dropdown-item" href="{{ route('purchases.index') }}">
-                                                {{ __('All') }}
+                                                {{ __('Todas') }}
                                             </a>
                                             <a class="dropdown-item"
                                                 href="{{ route('purchases.approvedPurchases') }}">
-                                                {{ __('Approval') }}
+                                                {{ __('aprobadas') }}
                                             </a>
                                             <a class="dropdown-item"
                                                 href="{{ route('purchases.purchaseReport') }}">
-                                                {{ __('Daily Purchase Report') }}
+                                                {{ __('Informe de Compras Diarias') }}
                                             </a>
                                         </div>
                                     </div>
@@ -372,7 +372,7 @@
                                         </svg>
                                     </span>
                                     <span class="nav-link-title">
-                                        {{ __('Quotations') }}
+                                        {{ __('Cotizaciones') }}
                                     </span>
                                 </a>
                             </li>
@@ -396,17 +396,17 @@
                                         </svg>
                                     </span>
                                     <span class="nav-link-title">
-                                        {{ __('Pages') }}
+                                        {{ __('Páginas') }}
                                     </span>
                                 </a>
                                 <div class="dropdown-menu">
                                     <div class="dropdown-menu-columns">
                                         <div class="dropdown-menu-column">
                                             <a class="dropdown-item" href="{{ route('suppliers.index') }}">
-                                                {{ __('Suppliers') }}
+                                                {{ __('Proveedores') }}
                                             </a>
                                             <a class="dropdown-item" href="{{ route('customers.index') }}">
-                                                {{ __('Customers') }}
+                                                {{ __('Clientes') }}
                                             </a>
                                         </div>
                                     </div>
@@ -431,20 +431,20 @@
                                         </svg>
                                     </span>
                                     <span class="nav-link-title">
-                                        {{ __('Settings') }}
+                                        {{ __('Configuración') }}
                                     </span>
                                 </a>
                                 <div class="dropdown-menu">
                                     <div class="dropdown-menu-columns">
                                         <div class="dropdown-menu-column">
                                             {{-- <a class="dropdown-item" href="{{ route('users.index') }}">
-                                                    {{ __('Users') }}
+                                                    {{ __('Usuarios') }}
                                                 </a> --}}
                                             <a class="dropdown-item" href="{{ route('categories.index') }}">
-                                                {{ __('Categories') }}
+                                                {{ __('Categorías') }}
                                             </a>
                                             <a class="dropdown-item" href="{{ route('units.index') }}">
-                                                {{ __('Units') }}
+                                                {{ __('Unidades') }}
                                             </a>
                                         </div>
                                     </div>
