@@ -6,7 +6,7 @@
             <div class="row g-2 align-items-center">
                 <div class="col">
                     <div class="page-pretitle">
-                        Overview
+                        Descripción general
                     </div>
                     <h2 class="page-title">
                         Dashboard
@@ -17,7 +17,7 @@
                     <div class="btn-list">
                         <a href="{{ route('orders.create') }}" class="btn btn-primary d-none d-sm-inline-block">
                             <x-icon.plus />
-                            Create new order
+                            Crear nuevo pedido
                         </a>
                         <a href="{{ route('orders.create') }}" class="btn btn-primary d-sm-none btn-icon"
                             aria-label="Create new report">
@@ -184,10 +184,10 @@
                                         </div>
                                         <div class="col">
                                             <div class="font-weight-medium">
-                                                {{ $products }} Products
+                                                {{ $products }} Productos
                                             </div>
                                             <div class="text-muted">
-                                                {{ $categories }} categories
+                                                {{ $categories }} categorias
                                             </div>
                                         </div>
                                     </div>
@@ -215,10 +215,10 @@
                                         </div>
                                         <div class="col">
                                             <div class="font-weight-medium">
-                                                {{ $orders }} Orders
+                                                {{ $orders }} Pedidos
                                             </div>
                                             <div class="text-muted">
-                                                {{ $todayOrders }} shipped
+                                                {{ $todayOrders }} enviado
                                             </div>
                                         </div>
                                     </div>
@@ -247,10 +247,10 @@
                                         </div>
                                         <div class="col">
                                             <div class="font-weight-medium">
-                                                {{ $purchases }} Purchases
+                                                {{ $purchases }} Compras
                                             </div>
                                             <div class="text-muted">
-                                                {{ $todayPurchases }} today
+                                                {{ $todayPurchases }} hoy
                                             </div>
                                         </div>
                                     </div>
@@ -279,10 +279,10 @@
                                         </div>
                                         <div class="col">
                                             <div class="font-weight-medium">
-                                                {{ $quotations }} Quotations
+                                                {{ $quotations }} Cotizaciones
                                             </div>
                                             <div class="text-muted">
-                                                {{ $todayQuotations }} today
+                                                {{ $todayQuotations }} hoy
                                             </div>
                                         </div>
                                     </div>
