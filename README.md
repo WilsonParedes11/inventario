@@ -1,72 +1,72 @@
-✨ Sistema de Gestión de Inventarios
-Sistema de Gestión de Inventarios con Laravel 10 y MySql.
+# Sistema de Gestión de Inventarios
+Este es un sistema de gestión de inventarios construido con Laravel 10 y MySql.
 
-Tablero de Control
+## Tablero de Control
 
-💀 Diseño de Base de Datos
+## Diseño de Base de Datos
 Diagrama de Clases
 
-😎 Funcionalidades
-Punto de Venta (POS)
-Pedidos
-Pedidos Pendientes
-Pedidos Completos
-Pagos Pendientes
-Compras
-Todas las Compras
-Compras Aprobadas
-Informe de Compras
-Productos
-Clientes
-Proveedores
-🚀 Cómo Usarlo
-Clonar el Repositorio
-bash
-Copy code
-git clone https://github.com/fajarghifar/inventory-management-system
-Ingresar al repositorio
-bash
-Copy code
-cd inventory-management-system
-Instalar Paquetes
-bash
-Copy code
+## Funcionalidades
+- Punto de Venta (POS)
+- Pedidos
+- Pedidos Pendientes
+- Pedidos Completos
+- Pagos Pendientes
+- Compras
+- Todas las Compras
+- Compras Aprobadas
+- Informe de Compras
+- Productos
+- Clientes
+- Proveedores
+
+## Cómo Usarlo
+1. Clonar el Repositorio
+```bash
+git clone git@github.com:WilsonParedes11/inventario.git
+
+2. Ingresar al repositorio
+
+cd inventario
+
+3. Instalar Paquetes
+
 composer install
-Copiar el archivo .env
-bash
-Copy code
+
+4. Copiar el archivo .env
+
 cp .env.example .env
-Generar clave de la aplicación
-bash
-Copy code
+
+5. Generar clave de la aplicación
+
 php artisan key:generate
-Configurar las credenciales de la base de datos en tu archivo .env.
-Poblar la base de datos:
-bash
-Copy code
+
+6. Configurar las credenciales de la base de datos en tu archivo .env.
+7. Poblar la base de datos:
+
+php artisan migrate
 php artisan migrate:fresh --seed
-Crear enlace de almacenamiento
-bash
-Copy code
+
+8. Crear enlace de almacenamiento
+
 php artisan storage:link
-Instalar dependencias de NPM
-bash
-Copy code
-npm install && npm run dev
-Ejecutar
-bash
-Copy code
+
+9. Instalar dependencias de NPM
+
+npm install 
+npm run dev
+
+10. Ejecutar
+
 php artisan serve
-Intentar iniciar sesión con el correo electrónico:
-bash
-Copy code
+
+11. Intentar iniciar sesión con el correo electrónico:
+
 admin@admin.com
+
 y contraseña:
 
-bash
-Copy code
 password
-🚀 Configuración
-Configurar el CarritoAbre el archivo ./config/cart.php. Puedes configurar impuestos, formateo de números, etc.
-Para más detalles, visita este enlace hardevine/shoppingcart.
 
+Configuración
+Configurar el Carrito: Abre el archivo ./config/cart.php. Puedes configurar impuestos, formateo de números, etc. Para más detalles, visita este enlace hardevine/shoppingcart.
