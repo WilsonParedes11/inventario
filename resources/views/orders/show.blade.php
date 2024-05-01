@@ -7,7 +7,7 @@
                 <div class="card-header">
                     <div>
                         <h3 class="card-title">
-                            {{ __('Order Details') }}
+                            {{ __('Detalles del pedido') }}
                         </h3>
                     </div>
 
@@ -48,7 +48,7 @@
                                 </div>
                             </div>
                         @endif
-                        
+
                         <x-action.close route="{{ route('orders.index') }}" />
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                     <div class="row row-cards mb-3">
                         <div class="col">
                             <label for="order_date" class="form-label required">
-                                {{ __('Order Date') }}
+                                {{ __('Fecha de orden') }}
                             </label>
                             <input type="text" id="order_date" class="form-control"
                                 value="{{ $order->order_date->format('d-m-Y') }}" disabled>
@@ -65,7 +65,7 @@
 
                         <div class="col">
                             <label for="invoice_no" class="form-label required">
-                                {{ __('Invoice No.') }}
+                                {{ __('Factura No.') }}
                             </label>
                             <input type="text" id="invoice_no" class="form-control" value="{{ $order->invoice_no }}"
                                 disabled>
@@ -73,7 +73,7 @@
 
                         <div class="col">
                             <label for="customer" class="form-label required">
-                                {{ __('Customer') }}
+                                {{ __('Cliente') }}
                             </label>
                             <input type="text" id="customer" class="form-control" value="{{ $order->customer->name }}"
                                 disabled>
@@ -81,7 +81,7 @@
 
                         <div class="col">
                             <label for="payment_type" class="form-label required">
-                                {{ __('Payment Type') }}
+                                {{ __('Tipo de pago') }}
                             </label>
 
                             <input type="text" id="payment_type" class="form-control" value="{{ $order->payment_type }}"
@@ -94,12 +94,12 @@
                             <thead class="thead-light">
                                 <tr>
                                     <th scope="col" class="align-middle text-center">No.</th>
-                                    <th scope="col" class="align-middle text-center">Photo</th>
-                                    <th scope="col" class="align-middle text-center">Product Name</th>
-                                    <th scope="col" class="align-middle text-center">Product Code</th>
-                                    <th scope="col" class="align-middle text-center">Quantity</th>
-                                    <th scope="col" class="align-middle text-center">Price</th>
-                                    <th scope="col" class="align-middle text-center">Sub Total</th>
+                                    <th scope="col" class="align-middle text-center">FOTO</th>
+                                    <th scope="col" class="align-middle text-center">NOMBRE DEL PRODUCTO</th>
+                                    <th scope="col" class="align-middle text-center">CÓDIGO DE PRODUCTO</th>
+                                    <th scope="col" class="align-middle text-center">CANTIDAD</th>
+                                    <th scope="col" class="align-middle text-center">PRECIO</th>
+                                    <th scope="col" class="align-middle text-center">SUBTOTAL</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -133,16 +133,16 @@
                                 @endforeach
                                 <tr>
                                     <td colspan="6" class="text-end">
-                                        Payed amount
+                                        Monto pagado
                                     </td>
                                     <td class="text-center">{{ number_format($order->pay, 2) }}</td>
                                 </tr>
                                 <tr>
-                                    <td colspan="6" class="text-end">Due</td>
+                                    <td colspan="6" class="text-end">Cambio</td>
                                     <td class="text-center">{{ number_format($order->due, 2) }}</td>
                                 </tr>
                                 <tr>
-                                    <td colspan="6" class="text-end">VAT</td>
+                                    <td colspan="6" class="text-end">IVA</td>
                                     <td class="text-center">{{ number_format($order->vat, 2) }}</td>
                                 </tr>
                                 <tr>
@@ -150,7 +150,7 @@
                                     <td class="text-center">{{ number_format($order->total, 2) }}</td>
                                 </tr>
                                 <tr>
-                                    <td colspan="6" class="text-end">Status</td>
+                                    <td colspan="6" class="text-end">Estado</td>
                                     <td class="text-center">
                                         <x-status dot
                                             color="{{ $order->order_status === \App\Enums\OrderStatus::COMPLETE ? 'green' : ($order->order_status === \App\Enums\OrderStatus::PENDING ? 'orange' : '') }}"
@@ -172,7 +172,7 @@
 
                             <button type="submit" class="btn btn-success"
                                 onclick="return confirm('Are you sure you want to complete this order?')">
-                                {{ __('Complete Order') }}
+                                {{ __('Completar Orden') }}
                             </button>
                         </form>
                     @endif

@@ -14,15 +14,15 @@
             </svg>
         </div>
         <p class="empty-title">
-            No orders found
+            No se encontraron pedidos
         </p>
         <p class="empty-subtitle text-secondary">
-            Try adjusting your search or filter to find what you're looking for.
+            Intente ajustar su búsqueda o filtro para encontrar lo que está buscando.
         </p>
         <div class="empty-action">
             <a href="{{ route('orders.create') }}" class="btn btn-primary">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 5l0 14"></path><path d="M5 12l14 0"></path></svg>
-                Add your first Order
+                Añade tu primer pedido
             </a>
         </div>
     </div>
@@ -32,11 +32,11 @@
             <div class="card-header">
                 <div>
                     <h3 class="card-title">
-                        {{ __('Orders: ') }}
+                        {{ __('Pedidos: ') }}
                         <x-status dot
                             color="green"
                             class="text-uppercase">
-                            {{ __('Complete') }}
+                            {{ __('Completos') }}
                         </x-status>
                     </h3>
                 </div>
@@ -52,12 +52,12 @@
                     <thead class="thead-light">
                         <tr>
                             <th scope="col" class="text-center">{{ __('No.') }}</th>
-                            <th scope="col" class="text-center">{{ __('Invoice No.') }}</th>
-                            <th scope="col" class="text-center">{{ __('Customer') }}</th>
-                            <th scope="col" class="text-center">{{ __('Date') }}</th>
-                            <th scope="col" class="text-center">{{ __('Payment') }}</th>
+                            <th scope="col" class="text-center">{{ __('FACTURA No.') }}</th>
+                            <th scope="col" class="text-center">{{ __('CLIENTE') }}</th>
+                            <th scope="col" class="text-center">{{ __('FECHA') }}</th>
+                            <th scope="col" class="text-center">{{ __('PAGO') }}</th>
                             <th scope="col" class="text-center">{{ __('Total') }}</th>
-                            <th scope="col" class="text-center">{{ __('Action') }}</th>
+                            <th scope="col" class="text-center">{{ __('ACCIÓN') }}</th>
                         </tr>
                     </thead>
                     <tbody>

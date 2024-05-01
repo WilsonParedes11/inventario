@@ -3,8 +3,8 @@
 @section('content')
     <div class="page-body">
         @if (!$orders)
-            <x-empty title="No orders found" message="Try adjusting your search or filter to find what you're looking for."
-                button_label="{{ __('Add your first Order') }}" button_route="{{ route('orders.create') }}" />
+            <x-empty title="No se encontraron pedidos" message="Intenta ajustar tu búsqueda o filtro para encontrar lo que estás buscando."
+                button_label="{{ __('Añadir tu primer pedido') }}" button_route="{{ route('orders.create') }}" />
         @else
             <div class="container-xl">
                 {{--        <x-card> --}}
