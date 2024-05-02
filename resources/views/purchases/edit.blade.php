@@ -7,7 +7,7 @@
             <div class="card-header">
                 <div>
                     <h3 class="card-title">
-                        {{ __('Purchase Edit') }}
+                        {{ __('Editar Compra') }}
                     </h3>
                 </div>
 
@@ -21,7 +21,7 @@
             <div class="card-body">
                 <div class="row gx-3 mb-3">
                     <div class="col-md-6">
-                        <label class="small mb-1">Name</label>
+                        <label class="small mb-1">Nombre</label>
                         <div class="form-control form-control-solid">{{ $purchase->supplier->name }}</div>
                     </div>
                     <div class="col-md-6">
@@ -31,17 +31,17 @@
                 </div>
                 <div class="row gx-3 mb-3">
                     <div class="col-md-6">
-                        <label class="small mb-1">Phone</label>
+                        <label class="small mb-1">Teléfono</label>
                         <div class="form-control form-control-solid">{{ $purchase->supplier->phone }}</div>
                     </div>
                     <div class="col-md-6">
-                        <label class="small mb-1">Order Date</label>
+                        <label class="small mb-1">Fecha de orden</label>
                         <div class="form-control form-control-solid">{{ $purchase->date }}</div>
                     </div>
                 </div>
                 <div class="row gx-3 mb-3">
                     <div class="col-md-6">
-                        <label class="small mb-1">No Purchase</label>
+                        <label class="small mb-1">No Compra</label>
                         <div class="form-control">{{ $purchase->purchase_no }}</div>
                     </div>
                     <div class="col-md-6">
@@ -51,16 +51,16 @@
                 </div>
                 <div class="row gx-3 mb-3">
                     <div class="col-md-6">
-                        <label class="small mb-1">Created By</label>
+                        <label class="small mb-1">Creado por</label>
                         <div class="form-control form-control-solid">{{ $purchase->createdBy->name ?? '-' }}</div>
                     </div>
                     <div class="col-md-6">
-                        <label class="small mb-1">Updated By</label>
+                        <label class="small mb-1">Actualizado por</label>
                         <div class="form-control form-control-solid">{{ $purchase->updatedBy->name ?? '-' }}</div>
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label  class="small mb-1">Address</label>
+                    <label  class="small mb-1">DIRECCIÓN</label>
                     <div class="form-control form-control-solid">{{ $purchase->supplier->address }}</div>
                 </div>
                 <div class="col-lg-12">
@@ -69,12 +69,12 @@
                             <thead class="thead-light">
                                 <tr>
                                     <th scope="col" class="align-middle text-center">No.</th>
-                                    <th scope="col" class="align-middle text-center">Photo</th>
-                                    <th scope="col" class="align-middle text-center">Product Name</th>
-                                    <th scope="col" class="align-middle text-center">Product Code</th>
-                                    <th scope="col" class="align-middle text-center">Current Stock</th>
-                                    <th scope="col" class="align-middle text-center">Quantity</th>
-                                    <th scope="col" class="align-middle text-center">Price</th>
+                                    <th scope="col" class="align-middle text-center">FOTO</th>
+                                    <th scope="col" class="align-middle text-center">NOMBRE DEL PRODUCTO</th>
+                                    <th scope="col" class="align-middle text-center">CÓDIGO DE PRODUCTO</th>
+                                    <th scope="col" class="align-middle text-center">STOCK ACTUAL</th>
+                                    <th scope="col" class="align-middle text-center">CANTIDAD</th>
+                                    <th scope="col" class="align-middle text-center">PRECIO</th>
                                     <th scope="col" class="align-middle text-center">Total</th>
                                 </tr>
                             </thead>
@@ -117,7 +117,7 @@
                                 {{-- created by --}}
                                 <tr>
                                     <td class="align-middle text-end" colspan="7">
-                                        Created By
+                                        Creado por
                                     </td>
                                     <td class="align-middle text-center">
                                         {{ $purchase->user->name }}
@@ -126,7 +126,7 @@
 
                                 <tr>
                                     <td class="align-middle text-end" colspan="7">
-                                        Tax Percentage
+                                        Porcentaje de impuestos
                                     </td>
                                     <td class="align-middle text-center">
                                         {{ number_format($purchase->tax_percentage, 2) }}
@@ -134,7 +134,7 @@
                                 </tr>
                                 <tr>
                                     <td class="align-middle text-end" colspan="7">
-                                        Tax Amount
+                                        Importe del impuesto
                                     </td>
                                     <td class="align-middle text-center">
                                         {{ number_format($purchase->tax_amount, 2) }}
@@ -143,16 +143,16 @@
 
                                 <tr>
                                     <td class="align-middle text-end" colspan="7">
-                                        Status
+                                        Estado
                                     </td>
                                     <td class="align-middle text-center">
                                         @if ($purchase->status->value == 1)
                                             <span class="badge bg-success-lt">
-                                                Approve
+                                                Aprobada
                                             </span>
                                         @elseif ($purchase->status->value == 0)
                                             <span class="badge bg-warning-lt">
-                                                Pending
+                                                Pendiente
                                             </span>
                                         @endif
                                     </td>
@@ -173,7 +173,7 @@
                                 class="btn btn-success"
                                 onclick="return confirm('Are you sure you want to approve this purchase?')"
                         >
-                            {{ __('Approve Purchase') }}
+                            {{ __('Aprobar compra') }}
                         </button>
                     </form>
                 @endif

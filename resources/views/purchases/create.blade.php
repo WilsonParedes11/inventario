@@ -17,7 +17,7 @@
                             <div class="card-header">
                                 <div>
                                     <h3 class="card-title">
-                                        {{ __('Create Purchase') }}
+                                        {{ __('Crear compra') }}
                                     </h3>
                                 </div>
 
@@ -33,7 +33,7 @@
                                 <div class="row gx-3 mb-3">
                                     <div class="col-md-4">
                                         <label for="date" class="form-label required">
-                                            {{ __('Purchase Date') }}
+                                            {{ __('Fecha de compra') }}
                                         </label>
 
                                         <input name="date" id="date" type="date"
@@ -53,16 +53,16 @@
 
 
                                     <x-tom-select
-                                        label="Suppliers"
+                                        label="Proveedores"
                                         id="supplier_id"
                                         name="supplier_id"
-                                        placeholder="Select Customer"
+                                        placeholder="Seleccionar Proveedor"
                                         :data="$suppliers"
                                     />
 
                                     <div class="col-md-4">
                                         <label for="reference" class="form-label required">
-                                            {{ __('Reference') }}
+                                            {{ __('Referencia') }}
                                         </label>
 
                                         <input type="text" class="form-control"
@@ -87,7 +87,7 @@
                                 {{--- onclick="return confirm('Are you sure you want to purchase?')" ---}}
                                 {{--- @disabled($errors->isNotEmpty()) ---}}
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Purchase') }}
+                                    {{ __('Comprar') }}
                                 </button>
                             </div>
                         </div>
