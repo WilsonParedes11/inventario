@@ -6,7 +6,7 @@
             <div class="row g-2 align-items-center mb-3">
                 <div class="col">
                     <h2 class="page-title">
-                        {{ __('Edit Product') }}
+                        {{ __('Editar Producto') }}
                     </h2>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h3 class="card-title">
-                                        {{ __('Product Image') }}
+                                        {{ __('Imagen Producto') }}
                                     </h3>
 
                                     <img class="img-account-profile mb-2"
@@ -57,20 +57,20 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h3 class="card-title">
-                                        {{ __('Product Details') }}
+                                        {{ __('Descripción del Producto') }}
                                     </h3>
 
                                     <div class="row row-cards">
                                         <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label for="name" class="form-label">
-                                                    {{ __('Name') }}
+                                                    {{ __('Nombre') }}
                                                     <span class="text-danger">*</span>
                                                 </label>
 
                                                 <input type="text" id="name" name="name"
                                                     class="form-control @error('name') is-invalid @enderror"
-                                                    placeholder="Product name" value="{{ old('name', $product->name) }}">
+                                                    placeholder="Producto" value="{{ old('name', $product->name) }}">
 
                                                 @error('name')
                                                     <div class="invalid-feedback">
@@ -83,7 +83,7 @@
                                         <div class="col-sm-6 col-md-6">
                                             <div class="mb-3">
                                                 <label for="category_id" class="form-label">
-                                                    Product category
+                                                    Categoria del Producto
                                                     <span class="text-danger">*</span>
                                                 </label>
 
@@ -109,14 +109,14 @@
                                         <div class="col-sm-6 col-md-6">
                                             <div class="mb-3">
                                                 <label class="form-label" for="unit_id">
-                                                    {{ __('Unit') }}
+                                                    {{ __('Unidad de medida') }}
                                                     <span class="text-danger">*</span>
                                                 </label>
 
                                                 <select name="unit_id" id="unit_id"
                                                     class="form-select @error('unit_id') is-invalid @enderror">
                                                     <option selected="" disabled="">
-                                                        Select a unit:
+                                                        Seleccione la unidad de medida:
                                                     </option>
 
                                                     @foreach ($units as $unit)
@@ -137,7 +137,7 @@
                                         <div class="col-sm-6 col-md-6">
                                             <div class="mb-3">
                                                 <label class="form-label" for="buying_price">
-                                                    Buying price
+                                                    Costo compra
                                                     <span class="text-danger">*</span>
                                                 </label>
 
@@ -157,7 +157,7 @@
                                         <div class="col-sm-6 col-md-6">
                                             <div class="mb-3">
                                                 <label for="selling_price" class="form-label">
-                                                    Selling price
+                                                    Precio de Venta
                                                     <span class="text-danger">*</span>
                                                 </label>
 
@@ -177,10 +177,13 @@
                                         <div class="col-sm-6 col-md-6">
                                             <div class="mb-3">
                                                 <label for="quantity" class="form-label">
-                                                    {{ __('Quantity') }}
+                                                    {{ __('Cantidad') }}
                                                 </label>
 
-                                                <input class="form-control" name="quantity" type="text" readonly value="{{ old('quantity', $product->quantity) }}"  required="true" aria-required="true" style="color: var(--tblr-secondary);background-color: var(--tblr-bg-surface-secondary); opacity: 1;"/>
+                                                <input class="form-control" name="quantity" type="text" readonly
+                                                    value="{{ old('quantity', $product->quantity) }}" required="true"
+                                                    aria-required="true"
+                                                    style="color: var(--tblr-secondary);background-color: var(--tblr-bg-surface-secondary); opacity: 1;" />
 
 
                                                 {{-- <input type="text" id="quantity" name="quantity"
@@ -193,7 +196,7 @@
                                         <div class="col-sm-6 col-md-6">
                                             <div class="mb-3">
                                                 <label for="quantity_alert" class="form-label">
-                                                    {{ __('Quantity Alert') }}
+                                                    {{ __('Cantidad de Alerta') }}
                                                     <span class="text-danger">*</span>
                                                 </label>
 
@@ -213,13 +216,12 @@
                                         <div class="col-sm-6 col-md-6">
                                             <div class="mb-3">
                                                 <label for="tax" class="form-label">
-                                                    {{ __('Tax') }}
+                                                    {{ __('IVA') }}
                                                 </label>
 
                                                 <input type="number" id="tax" name="tax"
-                                                    class="form-control @error('tax') is-invalid @enderror"
-                                                    min="0" placeholder="0"
-                                                    value="{{ old('tax', $product->tax) }}">
+                                                    class="form-control @error('tax') is-invalid @enderror" min="0"
+                                                    placeholder="0" value="{{ old('tax', $product->tax) }}">
 
                                                 @error('tax')
                                                     <div class="invalid-feedback">
@@ -232,7 +234,7 @@
                                         <div class="col-sm-6 col-md-6">
                                             <div class="mb-3">
                                                 <label class="form-label" for="tax_type">
-                                                    {{ __('Tax Type') }}
+                                                    {{ __('Tipo de impuesto') }}
                                                 </label>
 
                                                 <select name="tax_type" id="tax_type"
@@ -256,7 +258,7 @@
                                         <div class="col-md-12">
                                             <div class="mb-3 mb-0">
                                                 <label for="notes" class="form-label">
-                                                    {{ __('Notes') }}
+                                                    {{ __('Notas') }}
                                                 </label>
 
                                                 <textarea name="notes" id="notes" rows="5" class="form-control @error('notes') is-invalid @enderror"
@@ -274,11 +276,11 @@
 
                                 <div class="card-footer text-end">
                                     <button class="btn btn-primary" type="submit">
-                                        {{ __('Update') }}
+                                        {{ __('Actualizar') }}
                                     </button>
 
                                     <a class="btn btn-danger" href="{{ url()->previous() }}">
-                                        {{ __('Cancel') }}
+                                        {{ __('Cancelar') }}
                                     </a>
                                 </div>
                             </div>

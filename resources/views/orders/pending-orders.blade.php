@@ -14,14 +14,14 @@
                 <path d="M9.5 15.25a3.5 3.5 0 0 1 5 0" />
             </svg>
         </div>
-        <p class="empty-title">No se encontraron pedidos</p>
+        <p class="empty-title">No se encontraron ventas</p>
         <p class="empty-subtitle text-secondary">
             Intente ajustar su búsqueda o filtro para encontrar lo que está buscando.
         </p>
         <div class="empty-action">
             <a href="{{ route('orders.create') }}" class="btn btn-primary">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 5l0 14"></path><path d="M5 12l14 0"></path></svg>
-                Añade tu primer pedido
+                Añade tu primera venta
             </a>
         </div>
     </div>
@@ -31,7 +31,7 @@
             <div class="card-header">
                 <div>
                     <h3 class="card-title">
-                        {{ __('Pedidos: ') }}
+                        {{ __('Ventas: ') }}
                         <x-status dot
                             color="orange"
                             class="text-uppercase">

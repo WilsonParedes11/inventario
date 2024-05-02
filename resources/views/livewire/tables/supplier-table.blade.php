@@ -2,7 +2,7 @@
     <div class="card-header">
         <div>
             <h3 class="card-title">
-                {{ __('Suppliers') }}
+                {{ __('Proveedores') }}
             </h3>
         </div>
 
@@ -45,25 +45,25 @@
                 </th>
                 <th scope="col" class="align-middle text-center">
                     <a wire:click.prevent="sortBy('name')" href="#" role="button">
-                        {{ __('Name') }}
+                        {{ __('Nombre') }}
                         @include('inclues._sort-icon', ['field' => 'name'])
                     </a>
                 </th>
                 <th scope="col" class="align-middle text-center">
                     <a wire:click.prevent="sortBy('email')" href="#" role="button">
-                        {{ __('Email address') }}
+                        {{ __('EMAIL') }}
                         @include('inclues._sort-icon', ['field' => 'email'])
                     </a>
                 </th>
                 <th scope="col" class="align-middle text-center">
                     <a wire:click.prevent="sortBy('shopname')" href="#" role="button">
-                        {{ __('Shop name') }}
+                        {{ __('Nombre del Negocio') }}
                         @include('inclues._sort-icon', ['field' => 'shopname'])
                     </a>
                 </th>
                 <th scope="col" class="align-middle text-center">
                     <a wire:click.prevent="sortBy('type')" href="#" role="button">
-                        {{ __('Type') }}
+                        {{ __('Tipo') }}
                         @include('inclues._sort-icon', ['field' => 'type'])
                     </a>
                 </th>

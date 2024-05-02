@@ -51,7 +51,7 @@
                                             <td>{{ $user->name }}</td>
                                         </tr>
                                         <tr>
-                                            <td>Email address</td>
+                                            <td>EMAIL</td>
                                             <td>{{ $user->email }}</td>
                                         </tr>
                                         <tr>

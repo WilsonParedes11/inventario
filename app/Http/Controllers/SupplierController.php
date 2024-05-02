@@ -101,7 +101,7 @@ class SupplierController extends Controller
 
         return redirect()
             ->route('suppliers.index')
-            ->with('success', 'Supplier has been updated!');
+            ->with('success', 'Supplier ha sido actualizado!');
     }
 
     public function destroy($uuid)

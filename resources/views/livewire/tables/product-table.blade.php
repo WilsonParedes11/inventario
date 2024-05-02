@@ -15,15 +15,15 @@
                 <div class="dropdown-menu dropdown-menu-end" style="">
                     <a href="{{ route('products.create') }}" class="dropdown-item">
                         <x-icon.plus />
-                        {{ __('Create Product') }}
+                        {{ __('Crear Producto') }}
                     </a>
                     <a href="{{ route('products.import.view') }}" class="dropdown-item">
                         <x-icon.plus />
-                        {{ __('Import Products') }}
+                        {{ __('Importar Products') }}
                     </a>
                     <a href="{{ route('products.export.store') }}" class="dropdown-item">
                         <x-icon.plus />
-                        {{ __('Export Products') }}
+                        {{ __('Exportar Products') }}
                     </a>
                 </div>
             </div>

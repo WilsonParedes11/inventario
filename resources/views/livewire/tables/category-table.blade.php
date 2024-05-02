@@ -101,7 +101,7 @@
                 @empty
                     <tr>
                         <td class="align-middle text-center" colspan="8">
-                            No results found
+                            No existen resultados
                         </td>
                     </tr>
                 @endforelse

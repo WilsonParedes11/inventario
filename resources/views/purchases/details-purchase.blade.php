@@ -107,7 +107,7 @@
                                     <tr>
                                         <th scope="col">No.</th>
                                         <th scope="col">Photo</th>
-                                        <th scope="col">Product Name</th>
+                                        <th scope="col">Producto</th>
                                         <th scope="col">Product Code</th>
                                         <th scope="col">Current Stock</th>
                                         <th scope="col">Quantity</th>

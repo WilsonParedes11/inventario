@@ -99,7 +99,7 @@
                                     <tr>
                                         <th scope="col" class="align-middle text-center">No.</th>
                                         <th scope="col" class="align-middle text-center">Photo</th>
-                                        <th scope="col" class="align-middle text-center">Product Name</th>
+                                        <th scope="col" class="align-middle text-center">Producto</th>
                                         <th scope="col" class="align-middle text-center">Product Code</th>
                                         <th scope="col" class="align-middle text-center">Current Stock</th>
                                         <th scope="col" class="align-middle text-center">Quantity</th>

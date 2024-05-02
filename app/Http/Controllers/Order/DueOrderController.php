@@ -93,6 +93,6 @@ class DueOrderController extends Controller
 
         return redirect()
             ->route('due.index')
-            ->with('success', 'Due amount has been updated!');
+            ->with('success', 'Due amount ha sido actualizado!');
     }
 }

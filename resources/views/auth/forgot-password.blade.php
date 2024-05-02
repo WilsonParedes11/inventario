@@ -10,12 +10,12 @@
         </h2>
 
         <p class="text-secondary mb-4">
-            Enter your email address and your password will be reset and emailed to you.
+            Enter your email and your password will be reset and emailed to you.
         </p>
 
         <div class="mb-3">
             <label for="email" class="form-label">
-                Email address
+                EMAIL
             </label>
             <input type="email" name="email" id="email"
                    class="form-control @error('email') is-invalid @enderror"

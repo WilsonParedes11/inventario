@@ -83,7 +83,7 @@
                             </div>
                             <div class="mb-3">
                                 <label class="small mb-1" for="email">
-                                    Email address
+                                    EMAIL
                                 </label>
 
                                 <input class="form-control form-control-solid @error('photo') is-invalid @enderror"

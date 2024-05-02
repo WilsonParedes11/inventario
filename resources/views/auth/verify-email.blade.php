@@ -4,7 +4,7 @@
 <div class="text-center">
     <div class="my-5">
         <p class="fs-h3 text-secondary">
-            {{ __('Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}
+            {{ __('Thanks for signing up! Before getting started, could you verify your email by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}
         </p>
     </div>
 </div>
@@ -26,7 +26,7 @@
                     </div>
                     <div>
                         <div class="text-secondary">
-                            {{ __('A new verification link has been sent to the email address you provided during registration.') }}
+                            {{ __('A new verification link has been sent to the email you provided during registration.') }}
                         </div>
                     </div>
                 </div>

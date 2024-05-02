@@ -62,7 +62,7 @@
 
                                         <x-input name="name"
                                                  id="name"
-                                                 placeholder="Product name"
+                                                 placeholder="Producto"
                                                  value="{{ old('name') }}"
                                         />
                                     </div>

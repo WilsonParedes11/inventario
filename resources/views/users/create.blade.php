@@ -89,7 +89,7 @@
 
                                         <div class="mb-3">
                                             <label for="email" class="form-label">
-                                                {{ __('Email address') }}
+                                                {{ __('EMAIL') }}
                                                 <span class="text-danger">*</span>
                                             </label>
 

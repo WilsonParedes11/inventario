@@ -59,7 +59,7 @@ class CategoryController extends Controller
 
         return redirect()
             ->route('categories.index')
-            ->with('success', 'Category has been updated!');
+            ->with('success', 'La categoria ha sido actualizado!');
     }
 
     public function destroy(Category $category)

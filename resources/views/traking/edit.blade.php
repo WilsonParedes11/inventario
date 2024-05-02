@@ -6,7 +6,7 @@
             <div class="row g-2 align-items-center mb-3">
                 <div class="col">
                     <h2 class="page-title">
-                        {{ __('Edit Product') }}
+                        {{ __('Edit Producto') }}
                     </h2>
                 </div>
             </div>
@@ -57,7 +57,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h3 class="card-title">
-                                        {{ __('Product Details') }}
+                                        {{ __('Descripción del Producto') }}
                                     </h3>
 
                                     <div class="row row-cards">
@@ -70,7 +70,7 @@
 
                                                 <input type="text" id="name" name="name"
                                                     class="form-control @error('name') is-invalid @enderror"
-                                                    placeholder="Product name" value="{{ old('name', $product->name) }}">
+                                                    placeholder="Producto" value="{{ old('name', $product->name) }}">
 
                                                 @error('name')
                                                     <div class="invalid-feedback">

@@ -144,7 +144,7 @@ class TrakingController extends Controller
 
         return redirect()
             ->route('products.index')
-            ->with('success', 'Product has been updated!');
+            ->with('success', 'El producto ha sido actualizado!');
     }
 
     public function destroy($uuid)
