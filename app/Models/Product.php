@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Collection;
 
 class Product extends Model
 {
@@ -76,7 +77,7 @@ class Product extends Model
         $query->where('name', 'like', "%{$value}%")
             ->orWhere('code', 'like', "%{$value}%");
     }
-     /**
+    /**
      * Get the user that owns the Category
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -84,5 +85,37 @@ class Product extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+
+    public function orderDetails()
+    {
+        return $this->hasMany(OrderDetails::class);
+    }
+
+    public function purchaseDetails()
+    {
+        return $this->hasMany(PurchaseDetails::class);
+    }
+
+
+
+    public function movements(): Collection
+    {
+        $purchases = $this->purchaseDetails()->select('id', 'created_at as date', 'product_id', 'quantity', 'unitcost', 'total')
+            ->get()
+            ->map(function ($item) {
+                $item['type'] = 'purchase';
+                return $item;
+            });
+        $orders = $this->orderDetails()->select('id', 'created_at as date', 'product_id', 'quantity', 'unitcost', 'total')
+            ->get()
+            ->map(function ($item) {
+                $item['type'] = 'order';
+                return $item;
+            });
+        $movements = $purchases->isEmpty() ? $orders : $purchases->merge($orders);
+        $movements = $movements->sortBy('date');
+        return $movements;
     }
 }

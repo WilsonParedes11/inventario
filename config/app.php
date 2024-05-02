@@ -70,8 +70,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
-
+    'timezone' => 'America/Guayaquil',
     /*
     |--------------------------------------------------------------------------
     | Application Locale Configuration

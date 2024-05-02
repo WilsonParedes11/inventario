@@ -243,10 +243,10 @@
                             </li>
 
 
-                            <li class="nav-item {{ request()->is('products*') ? 'active' : null }}">
-                                <a class="nav-link" href="{{ route('products.index') }}">
-                                    <span
-                                        class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
+                            <li class="nav-item dropdown {{ request()->is('products*') ? 'active' : null }}">
+                                <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown"
+                                    data-bs-auto-close="outside" role="button" aria-expanded="false">
+                                    <span class="nav-link-icon d-md-none d-lg-inline-block">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="icon icon-tabler icon-tabler-packages" width="24"
                                             height="24" viewBox="0 0 24 24" stroke-width="2"
@@ -268,9 +268,21 @@
                                         {{ __('Productos') }}
                                     </span>
                                 </a>
+                                <div class="dropdown-menu">
+                                    <div class="dropdown-menu-columns">
+                                        <div class="dropdown-menu-column">
+                                            <a class="dropdown-item" href="{{ route('products.index') }}">
+                                                {{ __('Todos') }}
+                                            </a>
+                                            <a class="dropdown-item" href="{{ route('traking.index') }}">
+                                                {{ __('Tracking') }}
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </li>
 
-
+                            {{-- //                          --}}
                             <li class="nav-item dropdown {{ request()->is('orders*') ? 'active' : null }}">
                                 <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown"
                                     data-bs-auto-close="outside" role="button" aria-expanded="false">
@@ -346,8 +358,7 @@
                                                 href="{{ route('purchases.approvedPurchases') }}">
                                                 {{ __('aprobadas') }}
                                             </a>
-                                            <a class="dropdown-item"
-                                                href="{{ route('purchases.purchaseReport') }}">
+                                            <a class="dropdown-item" href="{{ route('purchases.purchaseReport') }}">
                                                 {{ __('Informe de Compras Diarias') }}
                                             </a>
                                         </div>
