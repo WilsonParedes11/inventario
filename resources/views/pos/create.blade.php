@@ -116,7 +116,7 @@
 
                         <div class="invoice-btn-section clearfix d-print-none">
                             <a href="{{ route('pos.index') }}" class="btn btn-warning">
-                                {{ __('Back') }}
+                                {{ __('Regresar') }}
                             </a>
 
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal">

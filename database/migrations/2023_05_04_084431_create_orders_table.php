@@ -19,7 +19,7 @@ return new class extends Migration
                 ->constrained();
             $table->string('order_date');
             $table->tinyInteger('order_status')
-                ->comment('0 - Pending / 1 - Complete');
+                ->comment('0 - Pendiente / 1 - Completado');
             $table->integer('total_products');
             $table->integer('sub_total');
             $table->integer('vat');

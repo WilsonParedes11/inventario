@@ -104,7 +104,7 @@
                             {{ $order->payment_type }}
                         </td>
                         <td class="align-middle text-center">
-                            {{ Number::currency($order->total, 'EUR') }}
+                            {{ Number::currency($order->total, 'USD') }}
                         </td>
                         <td class="align-middle text-center">
                             <x-status dot
@@ -136,7 +136,7 @@
 
     <div class="card-footer d-flex align-items-center">
         <p class="m-0 text-secondary">
-            Mostrando <span>{{ $orders->firstItem() }}</span> a <span>{{ $orders->lastItem() }}</span> of
+            Mostrando <span>{{ $orders->firstItem() }}</span> a <span>{{ $orders->lastItem() }}</span> de
             <span>{{ $orders->total() }}</span> entradas
         </p>
 

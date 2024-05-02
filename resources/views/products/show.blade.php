@@ -128,7 +128,7 @@
                                         <path d="M5 12l6 6" />
                                         <path d="M5 12l6 -6" />
                                     </svg>
-                                    {{ __('Back') }}
+                                    {{ __('Regresar') }}
                                 </a>
                                 <a class="btn btn-warning" href="{{ route('products.edit', $product->uuid) }}">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pencil"
@@ -138,7 +138,7 @@
                                         <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
                                         <path d="M13.5 6.5l4 4" />
                                     </svg>
-                                    {{ __('Edit') }}
+                                    {{ __('Editar') }}
                                 </a>
                             </div>
                         </div>

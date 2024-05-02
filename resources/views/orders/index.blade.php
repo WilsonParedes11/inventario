@@ -38,7 +38,7 @@
                             <x-table.td>{{ $order->customer->name }}</x-table.td>
                             <x-table.td>{{ $order->order_date->format('d-m-Y') }}</x-table.td>
                             <x-table.td>{{ $order->payment_type }}</x-table.td>
-                            <x-table.td>{{ Number::currency($order->total, 'EUR') }}</x-table.td>
+                            <x-table.td>{{ Number::currency($order->total, 'USD') }}</x-table.td>
                             <x-table.td>
                                 <x-badge class="{{ $order->order_status === 'complete' ? 'bg-green' : 'bg-orange' }}">
                                     {{ $order->order_status }}
@@ -64,7 +64,7 @@
                 @endif
                 @if (session('success'))
                     <div class="alert alert-success alert-dismissible" role="alert">
-                        <h3 class="mb-1">Success</h3>
+                        <h3 class="mb-1">Transacción Realizada con exito</h3>
                         <p>{{ session('success') }}</p>
 
                         <a class="btn-close" data-bs-dismiss="alert" aria-label="close"></a>

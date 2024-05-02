@@ -36,7 +36,7 @@
                                          id="image-preview"
                                     >
                                     <div class="small font-italic text-muted mb-2">
-                                        JPG or PNG no larger than 1 MB
+                                        JPG o PNG no mayor a 1 MB
                                     </div>
 
                                     <input type="file"

@@ -14,7 +14,7 @@
     <div class="card-body border-bottom py-3">
         <div class="d-flex">
             <div class="text-secondary">
-                Show
+                Mostrar
                 <div class="mx-2 d-inline-block">
                     <select wire:model.live="perPage" class="form-select form-select-sm" aria-label="result per page">
                         <option value="5">5</option>
@@ -23,10 +23,10 @@
                         <option value="25">25</option>
                     </select>
                 </div>
-                entries
+                elementos
             </div>
             <div class="ms-auto text-secondary">
-                Search:
+                Buscar:
                 <div class="ms-2 d-inline-block">
                     <input type="text" wire:model.live="search" class="form-control form-control-sm" aria-label="Search invoice">
                 </div>
@@ -62,7 +62,7 @@
                     </a>
                 </th>
                 <th scope="col" class="align-middle text-center">
-                    {{ __('Action') }}
+                    {{ __('Acciones') }}
                 </th>
             </tr>
             </thead>
@@ -100,7 +100,7 @@
 
     <div class="card-footer d-flex align-items-center">
         <p class="m-0 text-secondary d-none d-sm-block">
-            Showing <span>{{ $units->firstItem() }}</span> to <span>{{ $units->lastItem() }}</span> of <span>{{ $units->total() }}</span> entries
+            Mostrando <span>{{ $units->firstItem() }}</span> - <span>{{ $units->lastItem() }}</span> de <span>{{ $units->total() }}</span> elementos
         </p>
 
         <ul class="pagination m-0 ms-auto">

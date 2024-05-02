@@ -63,7 +63,7 @@
 
                 @if (session('status'))
                     <div class="alert alert-info alert-dismissible" role="alert">
-                        <h3 class="mb-1">Success</h3>
+                        <h3 class="mb-1">Transacción Realizada con exito</h3>
                         <p>{{ session('status') }}</p>
 
                         <a class="btn-close" data-bs-dismiss="alert" aria-label="close"></a>

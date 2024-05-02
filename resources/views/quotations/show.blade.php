@@ -8,7 +8,7 @@
                     <div class="card-header">
                         <div>
                             <h3 class="card-title">
-                                {{ __('Quotation Details') }}
+                                {{ __('Detalles de la Cotización') }}
                             </h3>
                         </div>
 
@@ -20,7 +20,7 @@
                         <div class="row row-cards mb-3">
                             <div class="col-3">
                                 <label for="date" class="small mb-1">
-                                    {{ __('Date') }}
+                                    {{ __('Fecha') }}
                                 </label>
 
                                 <input type="text" id="date" class="form-control"
@@ -29,7 +29,7 @@
 
                             <div class="col-3">
                                 <label for="purchase_no" class="small mb-1">
-                                    {{ __('Reference ID') }}
+                                    {{ __('Referencia ID') }}
                                 </label>
                                 <input type="text" id="purchase_no" class="form-control"
                                     value="{{ $quotation->reference }}" disabled>
@@ -37,7 +37,7 @@
 
                             <div class="col-3">
                                 <label for="supplier" class="small mb-1">
-                                    {{ __('Customer Name') }}
+                                    {{ __('Cliente') }}
                                 </label>
                                 <input type="text" id="supplier" class="form-control"
                                     value="{{ $quotation->customer_name }}" disabled>
@@ -45,7 +45,7 @@
 
                             <div class="col-3">
                                 <label for="create_by" class="small mb-1">
-                                    {{ __('Tax %') }}
+                                    {{ __('IVA %') }}
                                 </label>
                                 <input type="text" id="create_by" class="form-control"
                                     value="{{ $quotation->tax_percentage ?? null }}" disabled>
@@ -54,7 +54,7 @@
 
                             <div class="col-12">
                                 <label for="create_by" class="small mb-1">
-                                    {{ __('Note') }}
+                                    {{ __('Notas') }}
                                 </label>
                                 <textarea name="note" id="note" cols="30" rows="2" class="form-control" disabled>{{ $quotation->note }}</textarea>
                             </div>
@@ -67,12 +67,12 @@
                                     <thead class="thead-light">
                                         <tr>
                                             <th scope="col" class="align-middle text-center">No.</th>
-                                            <th scope="col" class="align-middle text-center">Photo</th>
-                                            <th scope="col" class="align-middle text-center">Product Name</th>
-                                            <th scope="col" class="align-middle text-center">Product Code</th>
-                                            <th scope="col" class="align-middle text-center">Current Stock</th>
-                                            <th scope="col" class="align-middle text-center">Quantity</th>
-                                            <th scope="col" class="align-middle text-center">Price</th>
+                                            <th scope="col" class="align-middle text-center">Imagen</th>
+                                            <th scope="col" class="align-middle text-center">Producto</th>
+                                            <th scope="col" class="align-middle text-center">Código</th>
+                                            <th scope="col" class="align-middle text-center">Existencias Actuales</th>
+                                            <th scope="col" class="align-middle text-center">Cantidad</th>
+                                            <th scope="col" class="align-middle text-center">Precio</th>
                                             <th scope="col" class="align-middle text-center">Sub Total</th>
                                         </tr>
                                     </thead>
@@ -115,7 +115,7 @@
                                         {{-- created by --}}
                                         <tr>
                                             <td class="align-middle text-end" colspan="7">
-                                                Created By
+                                                Usuario
                                             </td>
                                             <td class="align-middle text-center">
                                                 {{ $quotation->user->name }}
@@ -132,7 +132,7 @@
 
                                         <tr>
                                             <td class="align-middle text-end" colspan="7">
-                                                Tax
+                                                IVA
                                             </td>
                                             <td class="align-middle text-center">
                                                 {{ number_format($quotation->tax_amount, 2) }}
@@ -141,7 +141,7 @@
 
                                         <tr>
                                             <td class="align-middle text-end" colspan="7">
-                                                Shipping
+                                                Envio
                                             </td>
                                             <td class="align-middle text-center">
                                                 {{ number_format($quotation->shipping_amount, 2) }}
@@ -150,7 +150,7 @@
 
                                         <tr>
                                             <td class="align-middle text-end" colspan="7">
-                                                Discount
+                                                Descuento
                                             </td>
                                             <td class="align-middle text-center">
                                                 {{ number_format($quotation->discount_amount, 2) }}
@@ -159,20 +159,20 @@
 
                                         <tr>
                                             <td class="align-middle text-end" colspan="7">
-                                                Status
+                                                Estado
                                             </td>
                                             <td class="align-middle text-center">
                                                 @if ($quotation->status->value == 1)
                                                     <span class="badge bg-success-lt">
-                                                        Completed
+                                                        Completado
                                                     </span>
                                                 @elseif ($quotation->status->value == 0)
                                                     <span class="badge bg-warning-lt">
-                                                        Pending
+                                                        Pendiente
                                                     </span>
                                                 @else
                                                     <span class="badge bg-danger-lt">
-                                                        Cancel
+                                                        Cancelar
                                                     </span>
                                                 @endif
                                             </td>
@@ -189,7 +189,7 @@
                                     @csrf
                                     <button type="submit" class="btn btn-success">
                                         <i class="bi bi-check-circle"></i>
-                                        Complete Quotation
+                                        Completar Cotización
                                     </button>
                                 </form>
                             </div>
