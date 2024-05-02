@@ -3,7 +3,7 @@
         <input wire:keydown.escape="resetQuery"
                wire:model.live.debounce.500ms="query" type="text"
                class="form-control form-control-solid"
-               placeholder="Type product name or code...."
+               placeholder="Nombre del producto o código...."
         >
     </div>
 

@@ -86,16 +86,16 @@
                             {{ $movement->type === 'order' ? $movement->quantity : '--' }}
                         </td>
                         <td class="align-middle text-center">
-                            ${{ $movement->unitcost }}
+                            {{ Number::currency($movement->unitcost, 'USD') }}
                         </td>
                         <td class="align-middle text-center">
-                            ${{ $movement->total }}
+                            {{ Number::currency($movement->total, 'USD') }}
                         </td>
                     </tr>
                 @empty
                     <tr>
                         <td class="align-middle text-center" colspan="7">
-                            No results found
+                            No existen resultados
                         </td>
                     </tr>
                 @endforelse
@@ -106,7 +106,7 @@
     <div class="card-footer d-flex align-items-center">
         <p class="m-0 text-secondary">
             Mostrando <span>{{ $products->firstItem() }}</span>
-            to <span>{{ $products->lastItem() }}</span> of <span>{{ $products->total() }}</span> elementos
+            to <span>{{ $products->lastItem() }}</span> de <span>{{ $products->total() }}</span> elementos
         </p>
 
         <ul class="pagination m-0 ms-auto">

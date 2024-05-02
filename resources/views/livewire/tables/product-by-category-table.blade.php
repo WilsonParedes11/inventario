@@ -77,7 +77,7 @@
                         </a>
                     </th>
                     <th scope="col" class="align-middle text-center">
-                        {{ __('Action') }}
+                        {{ __('Acciones') }}
                     </th>
                 </tr>
                 </thead>
@@ -114,7 +114,7 @@
         </div>
         <div class="card-footer d-flex align-items-center">
             <p class="m-0 text-secondary">
-                Showing <span>{{ $products->firstItem() }}</span> to <span>{{ $products->lastItem() }}</span> of <span>{{ $products->total() }}</span> entries
+                Mostrando <span>{{ $products->firstItem() }}</span> - <span>{{ $products->lastItem() }}</span> de <span>{{ $products->total() }}</span> elementos
             </p>
 
             <ul class="pagination m-0 ms-auto">

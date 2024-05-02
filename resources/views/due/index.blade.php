@@ -5,8 +5,8 @@
     @if($orders->isEmpty())
     {{-- <x-empty
         title="No orders found"
-        message="Try adjusting your search or filter to find what you're looking for."
-        button_label="{{ __('Add your first Order') }}"
+        message="Intente ajustar su búsqueda o filtro para encontrar lo que está buscando."
+        button_label="{{ __('Agregue su primer Order') }}"
         button_route="{{ route('orders.create') }}"
     /> --}}
     <div class="empty">
@@ -62,12 +62,12 @@
                             </td>
                             <td class="text-center">
                                 <span class="badge bg-green text-white">
-                                    {{ Number::currency($order->pay, 'EUR') }}
+                                    {{ Number::currency($order->pay, 'USD') }}
                                 </span>
                             </td>
                             <td class="text-center">
                                 <span class="badge bg-yellow text-white">
-                                    {{ Number::currency($order->due, 'EUR') }}
+                                    {{ Number::currency($order->due, 'USD') }}
                                 </span>
                             </td>
                             <td class="text-center">

@@ -11,9 +11,9 @@ enum QuotationStatus: int
     public function label(): string
     {
         return match ($this) {
-            self::PENDING => __('Pending'),
-            self::SENT => __('Sent'),
-            self::CANCELED => __('Canceled'),
+            self::PENDING => __('Pendiente'),
+            self::SENT => __('Enviado'),
+            self::CANCELED => __('Cancelado'),
         };
     }
 }

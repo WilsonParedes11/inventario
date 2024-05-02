@@ -4,14 +4,14 @@
     <div class="page-body">
         @if (!$categories)
             <x-empty title="No categories found"
-                message="Try adjusting your search or filter to find what you're looking for."
-                button_label="{{ __('Add your first Category') }}" button_route="{{ route('categories.create') }}" />
+                message="Intente ajustar su búsqueda o filtro para encontrar lo que está buscando."
+                button_label="{{ __('Agregue su primer Category') }}" button_route="{{ route('categories.create') }}" />
         @else
             
             <div class="container-xl">
                 @if (session('success'))
                     <div class="alert alert-success alert-dismissible" role="alert">
-                        <h3 class="mb-1">Success</h3>
+                        <h3 class="mb-1">Transacción Realizada con exito</h3>
                         <p>{{ session('success') }}</p>
 
                         <a class="btn-close" data-bs-dismiss="alert" aria-label="close"></a>

@@ -10,8 +10,8 @@ enum PurchaseStatus: int
     public function label(): string
     {
         return match ($this) {
-            self::PENDING => __('Pending'),
-            self::APPROVED => __('Approved'),
+            self::PENDING => __('Pendiente'),
+            self::APPROVED => __('Aprobado'),
         };
     }
 }
