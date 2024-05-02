@@ -1,5 +1,5 @@
 @extends('layouts.tabler')
-<?php dd(11); ?>
+
 @section('content')
 <header class="page-header page-header-compact page-header-light border-bottom bg-white mb-4">
     <div class="container-xl px-4">
@@ -47,7 +47,7 @@
                         <!-- Form Group (order date) -->
                         <div class="col-md-6">
                             <label class="small mb-1">Order Date</label>
-                            <div class="form-control form-control-solid">{{ $purchase->purchase_date }}</div>
+                            <div class="form-control form-control-solid">{{ $purchase->date }}</div>
                         </div>
                     </div>
                     <div class="row gx-3 mb-3">
@@ -78,7 +78,7 @@
                     </div>
 
                     @if ($purchase->purchase_status == 0)
-                    <form action="{{ route('purchases.updatePurchase') }}" method="POST">
+                    <form action="{{ route('purchases.update', ['purchase' => $purchase->id]) }}" method="POST">
                         @csrf
                         @method('put')
                         <input type="hidden" name="id" value="{{ $purchase->id }}">
@@ -124,8 +124,8 @@
                                                 <img class="img-fluid"  src="{{ $item->product->product_image ? asset('storage/products/'.$item->product->product_image) : asset('assets/img/products/default.webp') }}">
                                             </div>
                                         </td>
-                                        <td scope="row">{{ $item->product->product_name }}</td>
-                                        <td scope="row">{{ $item->product->product_code }}</td>
+                                        <td scope="row">{{ $item->product->name }}</td>
+                                        <td scope="row">{{ $item->product->code }}</td>
                                         <td scope="row"><span class="btn btn-warning">{{ $item->product->stock }}</span></td>
                                         <td scope="row"><span class="btn btn-success">{{ $item->quantity }}</span></td>
                                         <td scope="row">{{ $item->unitcost }}</td>

@@ -58,10 +58,9 @@ class Purchase extends Model
     public function scopeSearch($query, $value): void
     {
         $query->where('purchase_no', 'like', "%{$value}%")
-            ->orWhere('status', 'like', "%{$value}%")
-        ;
+            ->orWhere('status', 'like', "%{$value}%");
     }
-     /**
+    /**
      * Get the user that owns the Category
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -69,5 +68,15 @@ class Purchase extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function user_created()
+    {
+        return $this->belongsTo(User::class, 'created_by');
+    }
+
+    public function user_updated()
+    {
+        return $this->belongsTo(User::class, 'updated_by');
     }
 }
