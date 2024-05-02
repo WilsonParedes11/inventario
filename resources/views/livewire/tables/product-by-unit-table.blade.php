@@ -17,7 +17,7 @@
                     <div class="dropdown-menu dropdown-menu-end" style="">
                         <a href="{{ route('products.create', ['unit' => $unit]) }}" class="dropdown-item">
                             <x-icon.plus/>
-                            {{ __('Add Product') }}
+                            {{ __('Agregar Producto') }}
                         </a>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
         <div class="card-body border-bottom py-3">
             <div class="d-flex">
                 <div class="text-secondary">
-                    Show
+                    Mostrar
                     <div class="mx-2 d-inline-block">
                         <select wire:model.live="perPage" class="form-select form-select-sm" aria-label="result per page">
                             <option value="5">5</option>
@@ -38,10 +38,10 @@
                             <option value="25">25</option>
                         </select>
                     </div>
-                    entries
+                    elementos
                 </div>
                 <div class="ms-auto text-secondary">
-                    Search:
+                    Buscar:
                     <div class="ms-2 d-inline-block">
                         <input type="text" wire:model.live="search" class="form-control form-control-sm" aria-label="Search invoice">
                     </div>
@@ -60,19 +60,19 @@
                     </th>
                     <th scope="col" class="align-middle text-center">
                         <a wire:click.prevent="sortBy('name')" href="#" role="button">
-                            {{ __('Product Name') }}
+                            {{ __('Producto') }}
                             @include('inclues._sort-icon', ['field' => 'name'])
                         </a>
                     </th>
                     <th scope="col" class="align-middle text-center d-none d-sm-table-cell">
                         <a wire:click.prevent="sortBy('code')" href="#" role="button">
-                            {{ __('Product Code') }}
+                            {{ __('Código') }}
                             @include('inclues._sort-icon', ['field' => 'code'])
                         </a>
                     </th>
                     <th scope="col" class="align-middle text-center d-none d-sm-table-cell">
                         <a wire:click.prevent="sortBy('quantity')" href="#" role="button">
-                            {{ __('Product Quantity') }}
+                            {{ __('Cantidad') }}
                             @include('inclues._sort-icon', ['field' => 'quantity'])
                         </a>
                     </th>
@@ -105,7 +105,7 @@
                 @empty
                     <tr>
                         <td class="align-middle text-center" colspan="8">
-                            No results found
+                            No existen resultados
                         </td>
                     </tr>
                 @endforelse

@@ -5,7 +5,7 @@
         @if (!$categories)
             <x-empty title="No categories found"
                 message="Intente ajustar su búsqueda o filtro para encontrar lo que está buscando."
-                button_label="{{ __('Agregue su primer Category') }}" button_route="{{ route('categories.create') }}" />
+                button_label="{{ __('Agregue su primera categoria') }}" button_route="{{ route('categories.create') }}" />
         @else
             
             <div class="container-xl">

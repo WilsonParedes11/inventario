@@ -102,7 +102,7 @@ class CustomerController extends Controller
 
         return redirect()
             ->route('customers.index')
-            ->with('success', 'Customer has been updated!');
+            ->with('success', 'El cliente ha sido actualizado!');
     }
 
     public function destroy($uuid)

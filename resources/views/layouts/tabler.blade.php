@@ -302,23 +302,23 @@
                                         </svg>
                                     </span>
                                     <span class="nav-link-title">
-                                        {{ __('Pedidos') }}
+                                        {{ __('Ventas') }}
                                     </span>
                                 </a>
                                 <div class="dropdown-menu">
                                     <div class="dropdown-menu-columns">
                                         <div class="dropdown-menu-column">
                                             <a class="dropdown-item" href="{{ route('orders.index') }}">
-                                                {{ __('Todos') }}
+                                                {{ __('Todas') }}
                                             </a>
                                             <a class="dropdown-item" href="{{ route('orders.complete') }}">
-                                                {{ __('Completos') }}
+                                                {{ __('Completas') }}
                                             </a>
                                             <a class="dropdown-item" href="{{ route('orders.pending') }}">
                                                 {{ __('Pendientes') }}
                                             </a>
                                             <a class="dropdown-item" href="{{ route('due.index') }}">
-                                                {{ __('vencidos') }}
+                                                {{ __('vencidas') }}
                                             </a>
                                         </div>
                                     </div>

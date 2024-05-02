@@ -64,7 +64,7 @@ class UnitController extends Controller
 
         return redirect()
             ->route('units.index')
-            ->with('success', 'Unit has been updated!');
+            ->with('success', 'Unit ha sido actualizado!');
     }
 
     public function destroy(Unit $unit)

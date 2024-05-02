@@ -3,18 +3,12 @@
         {{ __('Name') }}
     </label>
 
-    <input type="text"
-           id="name"
-           name="name"
-           wire:model.blur="name"
-           wire:keyup="selectedName"
-           placeholder="Enter name"
-           class="form-control @error('name') is-invalid @enderror"
-    />
+    <input type="text" id="name" name="name" wire:model.blur="name" wire:keyup="selectedName"
+        placeholder="Enter name" class="form-control @error('name') is-invalid @enderror" />
 
     @error('name')
-    <div class="invalid-feedback">
-        {{ $message }}
-    </div>
+        <div class="invalid-feedback">
+            {{ $message }}
+        </div>
     @enderror
 </div>

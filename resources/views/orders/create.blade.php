@@ -89,7 +89,7 @@
                                 <table class="table table-striped table-bordered align-middle">
                                     <thead class="thead-light">
                                         <tr>
-                                            <th scope="col">{{ __('Product') }}</th>
+                                            <th scope="col">{{ __('Producto') }}</th>
                                             <th scope="col" class="text-center">{{ __('Cantidad') }}</th>
                                             <th scope="col" class="text-center">{{ __('Precio') }}</th>
                                             <th scope="col" class="text-center">{{ __('SubTotal') }}</th>
