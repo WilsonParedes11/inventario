@@ -36,7 +36,6 @@ class TrakingTable extends Component
     {
         $products = Product::where("user_id", auth()->id())
             ->with(['category', 'unit'])
-            ->search($this->search)
             ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
             ->paginate($this->perPage);
 
@@ -81,6 +80,11 @@ class TrakingTable extends Component
                     $movements->push($detail);
                 }
                 $movements = $movements->sortByDesc('date');
+                $search = $this->search;
+                // Aplicar búsqueda al campo 'date' después de ordenar la colección
+                $movements = $movements->filter(function ($movement) use ($search) {
+                    return stripos($movement['date'], $search) !== false;
+                });
             }
         }
         return view('livewire.tables.traking-table', [
