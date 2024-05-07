@@ -2,7 +2,7 @@
     <div class="card-header">
         <div>
             <h3 class="card-title">
-                {{ __('Units') }}
+                {{ __('Unidades de Medida') }}
             </h3>
         </div>
 
@@ -45,19 +45,19 @@
                 </th>
                 <th scope="col" class="align-middle text-center">
                     <a wire:click.prevent="sortBy('name')" href="#" role="button">
-                        {{ __('Name') }}
+                        {{ __('Nombre') }}
                         @include('inclues._sort-icon', ['field' => 'name'])
                     </a>
                 </th>
                 <th scope="col" class="align-middle text-center d-none d-sm-table-cell">
                     <a wire:click.prevent="sortBy('slug')" href="#" role="button">
-                        {{ __('Slug') }}
+                        {{ __('Medida') }}
                         @include('inclues._sort-icon', ['field' => 'slug'])
                     </a>
                 </th>
                 <th scope="col" class="align-middle text-center">
                     <a wire:click.prevent="sortBy('short_code')" href="#" role="button">
-                        {{ __('Short Code') }}
+                        {{ __('Abreviatura') }}
                         @include('inclues._sort-icon', ['field' => 'short_code'])
                     </a>
                 </th>

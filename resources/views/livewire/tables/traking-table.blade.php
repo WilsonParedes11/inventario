@@ -9,13 +9,21 @@
     </div>
 
     <div class="card-body border-bottom py-3">
-        <select class="form-select form-control-solid @error('customer_id') is-invalid @enderror" id="customer_id"
-            wire:model="selectedProductId" name="customer_id" wire:change="loadMovements($event.target.value)">
-            <option selected disabled>Seleccione un producto</option>
-            @foreach ($products as $product)
-                <option value="{{ $product->id }}">{{ $product->name }}</option>
-            @endforeach
-        </select>
+        <div style="max-height: 200px; overflow-y: auto;">
+            <label for="products">Seleccione un producto:</label>
+            <input type="text" id="products" name="products" list="product-list"
+                class="form-control form-control-solid @error('selectedProduct') is-invalid @enderror"
+                wire:model="selectedProduct" wire:change="loadMovements($event.target.value)"
+                placeholder="Escriba o seleccione un producto">
+        
+            <datalist id="product-list">
+                @foreach ($products as $product)
+                    <option value="{{ $product->id }}">{{ $product->name }}</option>
+                @endforeach
+            </datalist>
+           
+        </div>
+        
         <br>
         <div class="d-flex">
             <div class="text-secondary">
