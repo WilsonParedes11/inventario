@@ -42,7 +42,7 @@ class PurchaseController extends Controller
 
     public function show($uuid)
     {
-        $purchase = Purchase::with(['supplier', 'details', 'user_created', 'user_updated', 'user'])
+        $purchase = Purchase::with('user') // Eager load the 'user' relationship
             ->where('id', $uuid)
             ->firstOrFail();
 
@@ -53,6 +53,7 @@ class PurchaseController extends Controller
             'purchaseDetails' => $purchaseDetails
         ]);
     }
+
 
     public function edit($uuid)
     {

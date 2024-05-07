@@ -20,7 +20,7 @@ use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\UnitController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -69,7 +69,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('products/import/', [ProductImportController::class, 'store'])->name('products.import.store');
     Route::get('products/export/', [ProductExportController::class, 'create'])->name('products.export.store');
     Route::resource('/products', ProductController::class);
-    
+
     Route::resource('/traking', TrakingController::class);
 
     // Route POS
