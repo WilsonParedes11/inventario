@@ -100,7 +100,7 @@
                     @if ($purchase->status === \App\Enums\PurchaseStatus::APPROVED)
                         <td class="align-middle text-center">
                             <span class="badge bg-green text-white text-uppercase">
-                                {{ __('APPROVED') }}
+                                {{ __('APROBADA') }}
                             </span>
                         </td>
                         <td class="align-middle text-center">
@@ -109,7 +109,7 @@
                     @else
                         <td class="align-middle text-center">
                             <span class="badge bg-orange text-white text-uppercase">
-                                {{ __('PENDING') }}
+                                {{ __('PENDIENTE') }}
                             </span>
                         </td>
                         <td class="align-middle text-center" style="width: 10%">
