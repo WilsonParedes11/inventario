@@ -325,7 +325,6 @@
                                 </div>
                             </li>
 
-
                             <li class="nav-item dropdown {{ request()->is('purchases*') ? 'active' : null }}">
                                 <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown"
                                     data-bs-auto-close="outside" role="button" aria-expanded="false">
@@ -366,8 +365,6 @@
                                 </div>
                             </li>
 
-
-
                             <li class="nav-item {{ request()->is('quotations*') ? 'active' : null }}">
                                 <a class="nav-link" href="{{ route('quotations.index') }}">
                                     <span
@@ -387,8 +384,6 @@
                                     </span>
                                 </a>
                             </li>
-
-
 
                             <li
                                 class="nav-item dropdown {{ request()->is('suppliers*', 'customers*') ? 'active' : null }}">
@@ -423,7 +418,6 @@
                                     </div>
                                 </div>
                             </li>
-
 
                             <li
                                 class="nav-item dropdown {{ request()->is('users*', 'categories*', 'units*') ? 'active' : null }}">

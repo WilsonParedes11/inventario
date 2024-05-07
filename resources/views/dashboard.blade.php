@@ -31,7 +31,7 @@
     <div class="page-body">
         <div class="container-xl">
             <div class="row row-deck row-cards">
-
+{{-- 
                 <div class="col-sm-6 col-lg-3">
                     <div class="card">
                         <div class="card-body">
@@ -180,7 +180,7 @@
                             <div id="chart-active-users" class="chart-sm"></div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
 
                 <div class="col-12">
