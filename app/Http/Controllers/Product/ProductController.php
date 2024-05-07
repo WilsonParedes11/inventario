@@ -11,8 +11,9 @@ use App\Models\Unit;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Illuminate\Http\Request;
 use Picqer\Barcode\BarcodeGeneratorHTML;
-use Str;
+use Illuminate\Support\Str;
 
+use Illuminate\Support\Facades\Storage;
 class ProductController extends Controller
 {
     public function index()
@@ -43,14 +44,54 @@ class ProductController extends Controller
         ]);
     }
 
+    // public function store(StoreProductRequest $request)
+    // {
+    //     /**
+    //      * Handle upload image
+    //      */
+    //     $image = "";
+    //     if ($request->hasFile('product_image')) {
+    //         $image = $request->file('product_image')->store('products', 'public');
+    //     }
+
+    //     Product::create([
+    //         "code" => IdGenerator::generate([
+    //             'table' => 'products',
+    //             'field' => 'code',
+    //             'length' => 4,
+    //             'prefix' => 'PC'
+    //         ]),
+
+    //         'product_image'     => $image,
+    //         'name'              => $request->name,
+    //         'category_id'       => $request->category_id,
+    //         'unit_id'           => $request->unit_id,
+    //         'quantity'          => $request->quantity,
+    //         'buying_price'      => $request->buying_price,
+    //         'selling_price'     => $request->selling_price,
+    //         'quantity_alert'    => $request->quantity_alert,
+    //         'tax'               => $request->tax,
+    //         'tax_type'          => $request->tax_type,
+    //         'notes'             => $request->notes,
+    //         "user_id" => auth()->id(),
+    //         "slug" => Str::slug($request->name, '-'),
+    //         "uuid" => Str::uuid()
+    //     ]);
+
+
+    //     return to_route('products.index')->with('success', 'Product has been created!');
+    // }
+
     public function store(StoreProductRequest $request)
     {
-        /**
-         * Handle upload image
-         */
         $image = "";
         if ($request->hasFile('product_image')) {
-            $image = $request->file('product_image')->store('products', 'public');
+            $file = $request->file('product_image');
+            $fileName = hexdec(uniqid()) . '.' . $file->getClientOriginalExtension();
+            $path = 'public/products/';
+
+            $file->storeAs($path, $fileName);
+            $image = $fileName;
         }
 
         Product::create([
@@ -76,7 +117,6 @@ class ProductController extends Controller
             "slug" => Str::slug($request->name, '-'),
             "uuid" => Str::uuid()
         ]);
-
 
         return to_route('products.index')->with('success', 'Product has been created!');
     }
@@ -105,19 +145,56 @@ class ProductController extends Controller
         ]);
     }
 
+    // public function update(UpdateProductRequest $request, $uuid)
+    // {
+    //     $product = Product::where("uuid", $uuid)->firstOrFail();
+    //     $product->update($request->except('product_image'));
+
+    //     $image = $product->product_image;
+    //     if ($request->hasFile('product_image')) {
+
+    //         // Delete Old Photo
+    //         if ($product->product_image) {
+    //             unlink(public_path('storage/') . $product->product_image);
+    //         }
+    //         $image = $request->file('product_image')->store('products', 'public');
+    //     }
+
+    //     $product->name = $request->name;
+    //     $product->slug = Str::slug($request->name, '-');
+    //     $product->category_id = $request->category_id;
+    //     $product->unit_id = $request->unit_id;
+    //     $product->quantity = $request->quantity;
+    //     $product->buying_price = $request->buying_price;
+    //     $product->selling_price = $request->selling_price;
+    //     $product->quantity_alert = $request->quantity_alert;
+    //     $product->tax = $request->tax;
+    //     $product->tax_type = $request->tax_type;
+    //     $product->notes = $request->notes;
+    //     $product->product_image = $image;
+    //     $product->save();
+
+
+    //     return redirect()
+    //         ->route('products.index')
+    //         ->with('success', 'El producto ha sido actualizado!');
+    // }
     public function update(UpdateProductRequest $request, $uuid)
     {
         $product = Product::where("uuid", $uuid)->firstOrFail();
         $product->update($request->except('product_image'));
 
-        $image = $product->product_image;
-        if ($request->hasFile('product_image')) {
+        if ($file = $request->file('product_image')) {
+            $fileName = hexdec(uniqid()) . '.' . $file->getClientOriginalExtension();
+            $path = 'public/products/';
 
             // Delete Old Photo
             if ($product->product_image) {
-                unlink(public_path('storage/') . $product->product_image);
+                Storage::delete($path . $product->product_image);
             }
-            $image = $request->file('product_image')->store('products', 'public');
+
+            $file->storeAs($path, $fileName);
+            $product->product_image = $fileName;
         }
 
         $product->name = $request->name;
@@ -131,9 +208,7 @@ class ProductController extends Controller
         $product->tax = $request->tax;
         $product->tax_type = $request->tax_type;
         $product->notes = $request->notes;
-        $product->product_image = $image;
         $product->save();
-
 
         return redirect()
             ->route('products.index')

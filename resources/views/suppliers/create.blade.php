@@ -6,7 +6,7 @@
             <div class="row g-2 align-items-center mb-3">
                 <div class="col">
                     <h2 class="page-title">
-                        {{ __('Create Supplier') }}
+                        {{ __('Crear proveedor') }}
                     </h2>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                                         src="{{ asset('assets/img/demo/user-placeholder.svg') }}" alt=""
                                         id="image-preview" />
 
-                                    <div class="small font-italic text-muted mb-2">JPG o PNG que no sea mayor a 1MB</div>
+                                    <div class="small font-italic text-muted mb-2">JPG o PNG que no sea mayor a 2MB</div>
 
                                     <input class="form-control @error('photo') is-invalid @enderror" type="file"
                                         id="image" name="photo" accept="image/*" onchange="previewImage();">

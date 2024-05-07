@@ -26,7 +26,7 @@ class UpdateSupplierRequest extends FormRequest
             'photo' => [
                 'image',
                 'file',
-                'max:1024'
+                'max:2048'
             ],
             'name' => [
                 'required',

@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Supplier;
 use App\Http\Requests\Supplier\StoreSupplierRequest;
 use App\Http\Requests\Supplier\UpdateSupplierRequest;
-use Str;
+use Illuminate\Support\Str;
+
 
 class SupplierController extends Controller
 {
