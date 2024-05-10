@@ -32,8 +32,8 @@
                                     </h3>
 
                                     <img class="img-account-profile mb-2"
-                                        src="{{ $product->product_image ? asset('storage/' . $product->product_image) : asset('assets/img/products/default.webp') }}"
-                                        alt="" id="image-preview">
+                                    src="{{ $product->product_image ? asset('storage/products/' . $product->product_image) : asset('assets/img/products/default.webp') }}"
+                                    alt="" id="image-preview">
 
                                     <div class="small font-italic text-muted mb-2">
                                         JPG o PNG no mayor a 2 MB

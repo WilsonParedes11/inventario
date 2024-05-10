@@ -16,32 +16,32 @@ class CategorySeeder extends Seeder
         $categories = collect([
             [
                 'id'    => 1,
-                'name'  => 'Laptops',
-                'slug'  => 'laptops',
+                'name'  => 'Pinturas Interiores',
+                'slug'  => 'pinturas-interiores',
                 'user_id' => 1,
             ],
             [
                 'id'    => 2,
-                'name'  => 'Hardware',
-                'slug'  => 'hardware',
+                'name'  => 'Pinturas Exteriores',
+                'slug'  => 'pinturas-exteriores',
                 'user_id' => 1,
             ],
             [
                 'id'    => 3,
-                'name'  => 'Smartphones',
-                'slug'  => 'smartphones',
+                'name'  => 'Pinturas Impermeabilizantes',
+                'slug'  => 'pinturas-impermeabilizantes',
                 'user_id' => 1,
             ],
             [
                 'id'    => 4,
-                'name'  => 'Speakers',
-                'slug'  => 'speakers',
+                'name'  => 'Pinceles y Rodillos',
+                'slug'  => 'pinceles-y-rodillos',
                 'user_id' => 1,
             ],
             [
                 'id'    => 5,
-                'name'  => 'Software',
-                'slug'  => 'software',
+                'name'  => 'Accesorios de Pintura',
+                'slug'  => 'accesorios-de-pintura',
                 'user_id' => 1,
             ]
         ]);

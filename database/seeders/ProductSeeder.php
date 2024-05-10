@@ -6,7 +6,8 @@ use App\Models\Product;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Str;
+use Illuminate\Support\Str;
+
 
 class ProductSeeder extends Seeder
 {
@@ -14,93 +15,93 @@ class ProductSeeder extends Seeder
     {
         $products = collect([
             [
-                'name' => 'iPhone 14 Pro',
-                'slug' => 'iphone-14-pro',
+                'name' => 'Pintura Interior Blanca',
+                'slug' => 'pintura-interior-blanca',
                 'code' => 001,
-                'quantity' => 10,
-                'buying_price' => 900,
-                'selling_price' => 1400,
+                'quantity' => 100,
+                'buying_price' => 20,
+                'selling_price' => 30,
                 'quantity_alert' => 10,
-                'tax' => 24,
-                'tax_type' => 1,
-                'notes' => null,
-                'category_id' => 3,
-                'unit_id' => 3,
-                'user_id'=>1,
-                'uuid'=>Str::uuid(),
-                'product_image' => 'assets/img/products/ip14.png'
-            ],
-            [
-                'name' => 'ASUS Laptop',
-                'slug' => 'asus-laptop',
-                'code' => 002,
-                'quantity' => 10,
-                'buying_price' => 900,
-                'selling_price' => 1400,
-                'quantity_alert' => 10,
-                'tax' => 24,
+                'tax' => 15,
                 'tax_type' => 1,
                 'notes' => null,
                 'category_id' => 1,
                 'unit_id' => 3,
-                'user_id'=>1,
-                'uuid'=>Str::uuid(),
-                'product_image' => 'assets/img/products/ip14.png'
+                'user_id' => 1,
+                'uuid' => Str::uuid(),
+                'product_image' => 'assets/img/products/interior-white.png'
             ],
             [
-                'name' => 'Logitech Keyboard',
-                'slug' => 'logitech-keyboard',
-                'code' => 003,
-                'quantity' => 10,
-                'buying_price' => 900,
-                'selling_price' => 1400,
+                'name' => 'Pintura Exterior Gris',
+                'slug' => 'pintura-exterior-gris',
+                'code' => 002,
+                'quantity' => 100,
+                'buying_price' => 25,
+                'selling_price' => 35,
                 'quantity_alert' => 10,
-                'tax' => 24,
+                'tax' => 15,
                 'tax_type' => 1,
                 'notes' => null,
                 'category_id' => 2,
                 'unit_id' => 3,
-                'user_id'=>1,
-                'uuid'=>Str::uuid(),
-                'product_image' => 'assets/img/products/keyboard.jpg'
+                'user_id' => 1,
+                'uuid' => Str::uuid(),
+                'product_image' => 'assets/img/products/exterior-gray.png'
             ],
             [
-                'name' => 'Logitech Speakers',
-                'slug' => 'logitech-speakers',
-                'code' => 004,
-                'quantity' => 10,
-                'buying_price' => 900,
-                'selling_price' => 1400,
+                'name' => 'Pintura Impermeabilizante Transparente',
+                'slug' => 'pintura-impermeabilizante-transparente',
+                'code' => 003,
+                'quantity' => 100,
+                'buying_price' => 30,
+                'selling_price' => 40,
                 'quantity_alert' => 10,
-                'tax' => 24,
+                'tax' => 15,
+                'tax_type' => 1,
+                'notes' => null,
+                'category_id' => 3,
+                'unit_id' => 3,
+                'user_id' => 1,
+                'uuid' => Str::uuid(),
+                'product_image' => 'assets/img/products/waterproof-clear.png'
+            ],
+            [
+                'name' => 'Set de Pinceles',
+                'slug' => 'set-de-pinceles',
+                'code' => 004,
+                'quantity' => 200,
+                'buying_price' => 10,
+                'selling_price' => 15,
+                'quantity_alert' => 50,
+                'tax' => 15,
                 'tax_type' => 1,
                 'notes' => null,
                 'category_id' => 4,
                 'unit_id' => 3,
-                'user_id'=>1,
-                'uuid'=>Str::uuid(),
-                'product_image' => 'assets/img/products/speaker.png'
+                'user_id' => 1,
+                'uuid' => Str::uuid(),
+                'product_image' => 'assets/img/products/brush-set.png'
             ],
             [
-                'name' => 'AutoCAD v7.0',
-                'slug' => 'autocad-v7.0',
+                'name' => 'Cinta de Pintor',
+                'slug' => 'cinta-de-pintor',
                 'code' => 005,
-                'quantity' => 10,
-                'buying_price' => 900,
-                'selling_price' => 1400,
-                'quantity_alert' => 10,
-                'tax' => 24,
+                'quantity' => 500,
+                'buying_price' => 2,
+                'selling_price' => 3,
+                'quantity_alert' => 100,
+                'tax' => 15,
                 'tax_type' => 1,
                 'notes' => null,
                 'category_id' => 5,
                 'unit_id' => 3,
-                'user_id'=>1,
-                'uuid'=>Str::uuid(),
-                'product_image' => 'assets/img/products/autocard.png'
+                'user_id' => 1,
+                'uuid' => Str::uuid(),
+                'product_image' => 'assets/img/products/painter-tape.png'
             ]
         ]);
 
-        $products->each(function ($product){
+        $products->each(function ($product) {
             Product::create($product);
         });
     }

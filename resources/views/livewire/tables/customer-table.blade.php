@@ -2,7 +2,7 @@
     <div class="card-header">
         <div>
             <h3 class="card-title">
-                {{ __('Customers') }}
+                {{ __('Clientes') }}
             </h3>
         </div>
 
@@ -82,14 +82,14 @@
                         {{ $customer->email }}
                     </td>
                     <td class="align-middle text-center">
-                        {{ $customer->created_at->diffForHumans() }}
+                        {{ $customer->created_at->locale('es')->diffForHumans() }}
                     </td>
                     <td class="align-middle text-center">
                         <x-button.show class="btn-icon" route="{{ route('customers.show', $customer->uuid) }}"/>
                         <x-button.edit class="btn-icon" route="{{ route('customers.edit', $customer->uuid) }}"/>
-                        <x-button.delete 
-                            class="btn-icon" 
-                            route="{{ route('customers.destroy', $customer->uuid) }}" 
+                        <x-button.delete
+                            class="btn-icon"
+                            route="{{ route('customers.destroy', $customer->uuid) }}"
                             onclick="return confirm('Are you sure to remove {{ $customer->name }} ?')"
                         />
                     </td>
