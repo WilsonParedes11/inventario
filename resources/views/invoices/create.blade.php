@@ -39,7 +39,7 @@
                                 <div class="row">
                                     <div class="col-sm-6 mb-50">
                                         <div class="invoice-number">
-                                            <h4 class="inv-title-1">Invoice date:</h4>
+                                            <h4 class="inv-title-1">Fecha de la factura:</h4>
                                             <p class="invo-addr-1">
                                                 {{ Carbon\Carbon::now()->format('M d, Y') }}
                                             </p>
@@ -48,7 +48,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-6 mb-50">
-                                        <h4 class="inv-title-1">Customer</h4>
+                                        <h4 class="inv-title-1">Cliente</h4>
                                         <p class="inv-from-1">{{ $customer->name }}</p>
                                         <p class="inv-from-1">{{ $customer->phone }}</p>
                                         <p class="inv-from-1">{{ $customer->email }}</p>
@@ -68,9 +68,9 @@
                                     <table class="default-table invoice-table">
                                         <thead>
                                             <tr>
-                                                <th class="text-center">Item</th>
-                                                <th class="text-center">Price</th>
-                                                <th class="text-center">Quantity</th>
+                                                <th class="text-center">Artículo</th>
+                                                <th class="text-center">Precio</th>
+                                                <th class="text-center">Cantidad</th>
                                                 <th class="text-center">Subtotal</th>
                                             </tr>
                                         </thead>
@@ -90,7 +90,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td colspan="3" class="text-end"><strong>Tax</strong></td>
+                                                <td colspan="3" class="text-end"><strong>IVA</strong></td>
                                                 <td class="text-center">
                                                     <strong>{{ Cart::tax() }}</strong>
                                                 </td>
@@ -116,11 +116,11 @@
 
                         <div class="invoice-btn-section clearfix d-print-none">
                             <a href="{{ url()->previous() }}" class="btn btn-warning">
-                                {{ __('Back to previous') }}
+                                {{ __('Volver al anterior') }}
                             </a>
 
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal">
-                                {{ __('Pay Now') }}
+                                {{ __('Pagar ahora') }}
                             </button>
                         </div>
                     </div>
@@ -133,7 +133,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">
-                            {{ __('Pay Order') }}
+                            {{ __('Orden de pago') }}
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
@@ -146,21 +146,21 @@
                                     <div class="mb-3">
                                         <input type="hidden" name="customer_id" value="{{ $customer->id }}">
 
-                                        <x-input.index label="Customer" name="customer" value="{{ $customer->name }}" disabled/>
+                                        <x-input.index label="Cliente" name="customer" value="{{ $customer->name }}" disabled/>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-6">
                                     <div class="mb-3">
                                         <label for="payment_type" class="form-label required">
-                                            {{ __('Payment') }}
+                                            {{ __('Pago') }}
                                         </label>
 
                                         <select class="form-control @error('payment_type') is-invalid @enderror" id="payment_type" name="payment_type">
-                                            <option selected="" disabled="">Select a payment:</option>
-                                            <option value="HandCash">HandCash</option>
+                                            <option selected="" disabled="">Seleccione el metodo de pago:</option>
+                                            <option value="HandCash">Dinero en efectivo</option>
                                             <option value="Cheque">Cheque</option>
-                                            <option value="Due">Due</option>
+                                            <option value="Due">Pendiente</option>
                                         </select>
 
                                         @error('payment_type')
@@ -173,7 +173,7 @@
 
                                 <div class="col-lg-12">
                                     <label for="pay" class="form-label required">
-                                        {{ __('Pay Now') }}
+                                        {{ __('Pagar ahora') }}
                                     </label>
 
                                     <input type="number"
@@ -195,10 +195,10 @@
 
                         <div class="modal-footer">
                             <button type="button" class="btn me-auto" data-bs-dismiss="modal">
-                                {{ __('Cancel') }}
+                                {{ __('Cancelar') }}
                             </button>
                             <button class="btn btn-primary" type="submit">
-                                {{ __('Pay') }}
+                                {{ __('Pagar') }}
                             </button>
                         </div>
                     </form>
