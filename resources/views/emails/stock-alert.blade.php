@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{{ __('Stock alert') }}</title>
+    <title>{{ __('Alerta de Stock') }}</title>
 </head>
 <body>
-    <p>{{ 'The following products are gonna out of stock: ' }}</p>
+    <p>{{ 'Los siguientes productos se agotaron.: ' }}</p>
     @foreach ($listProducts as $product)
         <p>{{ __('Producto: ' . $product->name ) }}<p>
-        <p>{{ __('Current Stock: ' . $product->quantity ) }}<p>
-        <p>{{ __('Alert If Below: ' . $product->quantity_alert ) }}<p>
+        <p>{{ __('Existencias actuales: ' . $product->quantity ) }}<p>
+        <p>{{ __('Alerta si está debajo de: ' . $product->quantity_alert ) }}<p>
         <hr>
     @endforeach
 
