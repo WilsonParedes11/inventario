@@ -193,28 +193,28 @@ class PurchaseController extends Controller
             ->get();
 
         $purchase_array[] = array(
-            'Date',
-            'No Purchase',
-            'Supplier',
-            'Product Code',
-            'Product',
-            'Quantity',
-            'Unitcost',
+            'Fecha',
+            'No Compra',
+            'Proveedor',
+            'Código Producto',
+            'Producto',
+            'Cantidad',
+            'Costo Unitario',
             'Total',
-            'Created By'
+            'Usuario'
         );
 
         foreach ($purchases as $purchase) {
             $purchase_array[] = array(
-                'Date' => $purchase->updated_at,
-                'No Purchase' => $purchase->purchase_no,
-                'Supplier' => $purchase->supplier_id,
-                'Product Code' => $purchase->code,
-                'Product' => $purchase->name,
-                'Quantity' => $purchase->quantity,
-                'Unitcost' => $purchase->unitcost,
+                'Fecha' => $purchase->updated_at,
+                'No Compra' => $purchase->purchase_no,
+                'Proveedor' => $purchase->supplier_id,
+                'Código Producto' => $purchase->code,
+                'Producto' => $purchase->name,
+                'Cantidad' => $purchase->quantity,
+                'Costo Unitario' => $purchase->unitcost,
                 'Total' => $purchase->total,
-                'Created By' => $purchase->created_by
+                'Usuario' => $purchase->created_by
             );
         }
 

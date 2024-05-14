@@ -125,7 +125,7 @@
                                         </div>
 
                                         <div class="col-sm-6 col-md-6">
-                                            <x-input name="account_holder" label="titular de la cuenta" />
+                                            <x-input name="account_holder" label="Titular de la cuenta" />
                                         </div>
 
                                         <div class="col-sm-6 col-md-6">
