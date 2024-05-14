@@ -18,21 +18,28 @@ class QuotationController extends Controller
 {
     public function index()
     {
-        $quotations = Quotation::where("user_id",auth()->id())->count();
+        $quotations = Quotation::where("user_id", auth()->id())->count();
 
         return view('quotations.index', [
             'quotations' => $quotations
         ]);
     }
 
+    public function downloadQuotation($uuid)
+    {
+        $quotation = Quotation::with(['customer', 'quotationDetails'])->where('uuid', $uuid)->firstOrFail();
+        return view('quotations.print-invoice', [
+            'quotation' => $quotation,
+        ]);
+    }
     public function create()
     {
         Cart::instance('quotation')->destroy();
 
         return view('quotations.create', [
             'cart' => Cart::content('quotation'),
-            'products' => Product::where("user_id",auth()->id())->get(),
-            'customers' => Customer::where("user_id",auth()->id())->get(),
+            'products' => Product::where("user_id", auth()->id())->get(),
+            'customers' => Customer::where("user_id", auth()->id())->get(),
 
             // maybe?
             //'statuses' => QuotationStatus::cases()
@@ -92,7 +99,7 @@ class QuotationController extends Controller
 
     public function show($uuid)
     {
-        $quotation = Quotation::where("user_id",auth()->id())->where('uuid', $uuid)->firstOrFail();
+        $quotation = Quotation::where("user_id", auth()->id())->where('uuid', $uuid)->firstOrFail();
 
         return view('quotations.show', [
             'quotation' => $quotation,
@@ -105,7 +112,7 @@ class QuotationController extends Controller
         $quotation->update([
             "status" => 2
         ]);
-        $quotations = Quotation::where("user_id",auth()->id())->count();
+        $quotations = Quotation::where("user_id", auth()->id())->count();
 
         return redirect()
             ->route('quotations.index', [
@@ -114,17 +121,17 @@ class QuotationController extends Controller
     }
 
     // complete quotaion method
-    public function update(Request $request,$uuid)
+    public function update(Request $request, $uuid)
     {
-        $quotation = Quotation::where("user_id",auth()->id())->where('uuid', $uuid)->firstOrFail();
+        $quotation = Quotation::where("user_id", auth()->id())->where('uuid', $uuid)->firstOrFail();
         $quotation->with(['customer', 'quotationDetails'])->get();
         $quotation->status = 1;
         // Reduce the stock
         $quoteProducts = $quotation->quotationDetails;
-        
+
         foreach ($quoteProducts as $product) {
             Product::where('id', $product->product_id)
-            ->update(['quantity' => DB::raw('quantity-' . $product->quantity)]);
+                ->update(['quantity' => DB::raw('quantity-' . $product->quantity)]);
         }
         $quotation->save();
 

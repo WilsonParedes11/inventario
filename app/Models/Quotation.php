@@ -49,7 +49,7 @@ class Quotation extends Model
     {
         return $this->hasMany(QuotationDetails::class);
     }
-
+  
     public function customer(): BelongsTo
     {
         return $this->belongsTo(Customer::class);

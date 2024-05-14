@@ -102,7 +102,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     // TODO: Remove from OrderController
     Route::get('/orders/details/{order_id}/download', [OrderController::class, 'downloadInvoice'])->name('order.downloadInvoice');
-
+    Route::get('/quotations/details/{quotation_id}/download', [QuotationController::class, 'downloadQuotation'])->name('quotation.downloadQuotation');
 
     // Route Purchases
     Route::get('/purchases/approved', [PurchaseController::class, 'approvedPurchases'])->name('purchases.approvedPurchases');
