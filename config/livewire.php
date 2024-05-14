@@ -76,29 +76,11 @@ return [
         'max_upload_time' => 5, // Max duration (in minutes) before an upload is invalidated...
     ],
 
-    /*
-    |---------------------------------------------------------------------------
-    | Render On Redirect
-    |---------------------------------------------------------------------------
-    |
-    | This value determines if Livewire will run a component's `render()` method
-    | after a redirect has been triggered using something like `redirect(...)`
-    | Setting this to true will render the view once more before redirecting
-    |
-    */
+  
 
     'render_on_redirect' => false,
 
-    /*
-    |---------------------------------------------------------------------------
-    | Eloquent Model Binding
-    |---------------------------------------------------------------------------
-    |
-    | Previous versions of Livewire supported binding directly to eloquent model
-    | properties using wire:model by default. However, this behavior has been
-    | deemed too "magical" and has therefore been put under a feature flag.
-    |
-    */
+    
 
     'legacy_model_binding' => false,
 

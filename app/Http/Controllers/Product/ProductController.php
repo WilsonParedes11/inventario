@@ -79,7 +79,7 @@ class ProductController extends Controller
     //     ]);
 
 
-    //     return to_route('products.index')->with('success', 'Product has been created!');
+    //     return to_route('products.index')->with('success', 'Producto creado!');
     // }
 
     public function store(StoreProductRequest $request)
@@ -118,7 +118,7 @@ class ProductController extends Controller
             "uuid" => Str::uuid()
         ]);
 
-        return to_route('products.index')->with('success', 'Product has been created!');
+        return to_route('products.index')->with('success', 'El producto ha sido creado!');
     }
 
     public function show($uuid)
@@ -232,6 +232,6 @@ class ProductController extends Controller
 
         return redirect()
             ->route('products.index')
-            ->with('success', 'Product has been deleted!');
+            ->with('success', 'El producto ha sido eliminado!');
     }
 }

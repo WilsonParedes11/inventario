@@ -44,7 +44,7 @@ class UserController extends Controller
 
         return redirect()
             ->route('users.index')
-            ->with('success', 'New User has been created!');
+            ->with('success', 'Nuevo usuario creado!');
     }
 
     public function show(User $user)
@@ -129,6 +129,6 @@ class UserController extends Controller
 
         return redirect()
             ->route('users.index')
-            ->with('success', 'User has been deleted!');
+            ->with('success', 'El usuario ha sido eliminado!');
     }
 }

@@ -8,7 +8,6 @@
                 <div>
                     <h3 class="card-title">
                         {{ __('Editar Unidades') }}
-
                     </h3>
                 </div>
 
