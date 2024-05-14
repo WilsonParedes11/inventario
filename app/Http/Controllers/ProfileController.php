@@ -90,7 +90,7 @@ class ProfileController extends Controller
 
         return redirect()
             ->route('profile.store.settings')
-            ->with('success', 'Store Information ha sido actualizado!');
+            ->with('success', 'La información de la tienda ha sido actualizado!');
     }
 
     public function store_settings()

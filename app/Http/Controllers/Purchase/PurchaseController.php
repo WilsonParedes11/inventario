@@ -119,7 +119,7 @@ class PurchaseController extends Controller
 
         return redirect()
             ->route('purchases.index')
-            ->with('success', 'Purchase has been created!');
+            ->with('success', 'Compra creada exitosamente!');
     }
 
     public function update($uuid)
@@ -140,7 +140,7 @@ class PurchaseController extends Controller
 
         return redirect()
             ->back()
-            ->with('success', 'Purchase has been approved!');
+            ->with('success', 'La compra ha sido aprobada!');
     }
 
     public function destroy($uuid)
@@ -150,7 +150,7 @@ class PurchaseController extends Controller
 
         return redirect()
             ->route('purchases.index')
-            ->with('success', 'Purchase has been deleted!');
+            ->with('success', 'La compra ha sido eliminada!');
     }
 
 

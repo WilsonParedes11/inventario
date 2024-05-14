@@ -55,7 +55,7 @@
                                         <p class="inv-from-2">{{ $customer->address }}</p>
                                     </div>
                                     <div class="col-sm-6 text-end mb-50">
-                                        <h4 class="inv-title-1">Store</h4>
+                                        <h4 class="inv-title-1">Almacen</h4>
                                         <p class="inv-from-1">{{ $user->store_name }}</p>
                                         <p class="inv-from-1">{{ $user->store_phone }}</p>
                                         <p class="inv-from-1">{{ $user->store_email }}</p>
@@ -78,27 +78,27 @@
                                             @foreach ($carts as $item)
                                             <tr>
                                                 <td class="text-center">{{ $item->name }}</td>
-                                                <td class="text-center">{{ $item->price }}</td>
+                                                <td class="text-center">${{ $item->price }}</td>
                                                 <td class="text-center">{{ $item->qty }}</td>
-                                                <td class="text-center">{{ $item->subtotal }}</td>
+                                                <td class="text-center">${{ $item->subtotal }}</td>
                                             </tr>
                                             @endforeach
                                             <tr>
                                                 <td colspan="3" class="text-end"><strong>Subtotal</strong></td>
                                                 <td class="text-center">
-                                                    <strong>{{ Cart::subtotal() }}</strong>
+                                                    <strong>${{ Cart::subtotal() }}</strong>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td colspan="3" class="text-end"><strong>IVA</strong></td>
                                                 <td class="text-center">
-                                                    <strong>{{ Cart::tax() }}</strong>
+                                                    <strong>${{ Cart::tax() }}</strong>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td colspan="3" class="text-end"><strong>Total</strong></td>
                                                 <td class="text-center">
-                                                    <strong>{{ Cart::total() }}</strong>
+                                                    <strong>${{ Cart::total() }}</strong>
                                                 </td>
                                             </tr>
                                         </tbody>

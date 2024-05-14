@@ -85,7 +85,7 @@ class TrakingController extends Controller
         ]);
 
 
-        return to_route('products.index')->with('success', 'Product has been created!');
+        return to_route('products.index')->with('success', 'El producto ha sido creado!');
     }
 
     public function show($uuid)
@@ -164,6 +164,6 @@ class TrakingController extends Controller
 
         return redirect()
             ->route('traking.index')
-            ->with('success', 'Product has been deleted!');
+            ->with('success', 'El producto ha sido eliminado!');
     }
 }

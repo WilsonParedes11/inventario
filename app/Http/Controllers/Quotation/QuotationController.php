@@ -42,7 +42,7 @@ class QuotationController extends Controller
     public function store(StoreQuotationRequest $request)
     {
         if (count(Cart::instance('quotation')->content()) === 0) {
-            return redirect()->back()->with('message', 'Please search & select products!');
+            return redirect()->back()->with('message', 'Por favor busque y seleccione productos!');
         }
         DB::transaction(function () use ($request) {
             $quotation = Quotation::create([

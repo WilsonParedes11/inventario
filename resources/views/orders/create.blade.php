@@ -66,11 +66,11 @@
                                 </div>
 
                                 <div class="col-md-4">
-                                    <label class="small mb-1" for="reference">
-                                        {{ __('Reference') }}
-                                    </label>
+                                    {{-- <label class="small mb-1" for="reference">
+                                        {{ __('Referencia') }}
+                                    </label> --}}
 
-                                    <input type="text" class="form-control"
+                                    <input type="hidden" class="form-control"
                                            id="reference"
                                            name="reference"
                                            value="ORD"
@@ -138,7 +138,7 @@
                                         </tr>
                                         @empty
                                         <td colspan="5" class="text-center">
-                                            {{ __('Add Products') }}
+                                            {{ __('Agregar Productos') }}
                                         </td>
                                         @endforelse
 
