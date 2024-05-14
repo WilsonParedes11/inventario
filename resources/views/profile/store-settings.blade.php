@@ -8,7 +8,7 @@
                     <div class="col-auto mb-3">
                         <h1 class="page-header-title">
                             <div class="page-header-icon"><i data-feather="user"></i></div>
-                            Store - Settings
+                            Tienda - Configuración
                         </h1>
                     </div>
                 </div>
@@ -26,20 +26,20 @@
                     <div class="card-header">
                         <div>
                             <h3 class="card-title">
-                                {{ __('Update Store Informations') }}
+                                {{ __('Actualizar información de la tienda') }}
                             </h3>
                         </div>
                     </div>
 
                     <x-form action="{{ route('profile.store.settings.store') }}" method="POST">
                         <div class="card-body">
-                            <x-input type="text" name="store_name" label="Store Name" value="{{ $user->store_name }}"
+                            <x-input type="text" name="store_name" label="Nombre de la tienda" value="{{ $user->store_name }}"
                                 required />
-                            <x-input type="tel" name="store_phone" label="Store Phone" value="{{ $user->store_phone }}"
+                            <x-input type="tel" name="store_phone" label="Teléfono de la tienda" value="{{ $user->store_phone }}"
                                 required />
-                            <x-input type="email" name="store_email" label="Store Eamil" value="{{ $user->store_email }}"
+                            <x-input type="email" name="store_email" label="Eamil de la tienda" value="{{ $user->store_email }}"
                                 required />
-                            <x-input type="text" name="store_address" label="Store Address"
+                            <x-input type="text" name="store_address" label="Dirección de la tienda"
                                 value="{{ $user->store_address }}" required />
                         </div>
 

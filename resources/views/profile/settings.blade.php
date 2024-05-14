@@ -8,7 +8,7 @@
                     <div class="col-auto mb-3">
                         <h1 class="page-header-title">
                             <div class="page-header-icon"><i data-feather="user"></i></div>
-                            Account Settings - Settings
+                            Configuración de cuenta - Configuración
                         </h1>
                     </div>
                 </div>
@@ -30,16 +30,16 @@
                     <div class="card-header">
                         <div>
                             <h3 class="card-title">
-                                {{ __('Change Password') }}
+                                {{ __('Cambiar la contraseña') }}
                             </h3>
                         </div>
                     </div>
 
                     <x-form action="{{ route('password.update') }}" method="PUT">
                         <div class="card-body">
-                            <x-input type="password" name="current_password" label="Current Password" required />
-                            <x-input type="password" name="password" label="New Password" required />
-                            <x-input type="password" name="password_confirmation" label="Confirm Password" required />
+                            <x-input type="password" name="current_password" label="Contraseña actual" required />
+                            <x-input type="password" name="password" label="Nueva contraseña" required />
+                            <x-input type="password" name="password_confirmation" label="confirmar Contraseña" required />
                         </div>
 
                         <div class="card-footer text-end">
@@ -52,13 +52,11 @@
             <div class="col-lg-4">
                 <div class="card mb-4">
                     <div class="card-header">
-                        Two-Factor Authentication
+                        Autenticación de dos factores
                     </div>
                     <div class="card-body">
                         <p>
-                            Add another level of security to your account by enabling two-factor authentication.
-                            We will send you a text message to verify your login attempts on unrecognized devices and
-                            browsers.
+                            Agregue otro nivel de seguridad a su cuenta habilitando la autenticación de dos factores. Le enviaremos un mensaje de texto para verificar sus intentos de inicio de sesión en dispositivos y navegadores no reconocidos.
                         </p>
                         <form>
                             <div class="form-check">
@@ -76,15 +74,14 @@
 
                 <div class="card mb-4">
                     <div class="card-header">
-                        Delete Account
+                        Borrar cuenta
                     </div>
                     <div class="card-body">
                         <p>
-                            Deleting your account is a permanent action and cannot be undone. If you are sure you want to
-                            delete your account, select the button below.
+                            Eliminar su cuenta es una acción permanente y no se puede deshacer. Si está seguro de que desea eliminar su cuenta, seleccione el botón a continuación.
                         </p>
                         <button type="button" class="btn btn-danger-soft text-danger">
-                            I understand, delete my account
+                            Entiendo, borro mi cuenta
                         </button>
                     </div>
                 </div>
