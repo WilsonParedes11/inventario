@@ -105,10 +105,10 @@
                                                     </span>
                                                 </td>
                                                 <td class="align-middle text-center">
-                                                    {{ number_format($item->unitcost, 2) }}
+                                                    ${{ number_format($item->unit_price, 2) }}
                                                 </td>
                                                 <td class="align-middle text-center">
-                                                    {{ number_format($item->total, 2) }}
+                                                    ${{ number_format($item->sub_total, 2) }}
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -126,7 +126,7 @@
                                                 Total
                                             </td>
                                             <td class="align-middle text-center">
-                                                {{ number_format($quotation->total_amount, 2) }}
+                                                ${{ number_format($quotation->total_amount, 2) }}
                                             </td>
                                         </tr>
 
@@ -135,7 +135,7 @@
                                                 IVA
                                             </td>
                                             <td class="align-middle text-center">
-                                                {{ number_format($quotation->tax_amount, 2) }}
+                                                ${{ number_format($quotation->tax_amount, 2) }}
                                             </td>
                                         </tr>
 
@@ -144,7 +144,7 @@
                                                 Envio
                                             </td>
                                             <td class="align-middle text-center">
-                                                {{ number_format($quotation->shipping_amount, 2) }}
+                                                ${{ number_format($quotation->shipping_amount, 2) }}
                                             </td>
                                         </tr>
 
@@ -153,7 +153,7 @@
                                                 Descuento
                                             </td>
                                             <td class="align-middle text-center">
-                                                {{ number_format($quotation->discount_amount, 2) }}
+                                                ${{ number_format($quotation->discount_amount, 2) }}
                                             </td>
                                         </tr>
 
