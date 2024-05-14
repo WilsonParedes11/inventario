@@ -184,5 +184,9 @@
     "View :name": "Ver :name",
     "Web Server is Down": "El servidor web está caído",
     "Yes": "Sí",
-    "Name": "Nombre"
+    "Name": "Nombre",
+    "DISTRIBUTOR": "Distribuidor",
+    "WHOLESALER": "Mayorista",
+    "PRODUCER": "Productor"
+
 }

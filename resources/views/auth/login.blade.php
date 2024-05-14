@@ -66,9 +66,9 @@
     </div>
 </div>
 <div class="text-center text-secondary mt-3">
-    ¿Aún no tienes cuenta?<a href="{{ route('register') }}" tabindex="-1">
+    {{-- ¿Aún no tienes cuenta?<a href="{{ route('register') }}" tabindex="-1">
         Registrase
-    </a>
+    </a> --}}
 
     <span class="form-label-description">
         <a href="{{ route('password.request') }}">olvidé la contraseña</a>

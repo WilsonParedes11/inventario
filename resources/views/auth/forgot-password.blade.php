@@ -6,11 +6,11 @@
 
     <div class="card-body">
         <h2 class="card-title text-center mb-4">
-            Forgot password
+            Has olvidado tu contraseña
         </h2>
 
         <p class="text-secondary mb-4">
-            Enter your email and your password will be reset and emailed to you.
+            Ingrese su correo electrónico y su contraseña se restablecerá y se le enviará por correo electrónico.
         </p>
 
         <div class="mb-3">
@@ -19,7 +19,7 @@
             </label>
             <input type="email" name="email" id="email"
                    class="form-control @error('email') is-invalid @enderror"
-                   placeholder="Enter email"
+                   placeholder="Ingrese su correo electrónico"
             >
 
             @error('email')
@@ -37,6 +37,6 @@
     </div>
 </form>
 <div class="text-center text-secondary mt-3">
-    Forget it, <a href="{{ route('login') }}">send me back</a> to the sign in screen.
+    Olvídalo,envíame de vuelta a la pantalla de  <a href="{{ route('login') }}"> inicio de sesión.</a>
 </div>
 @endsection
