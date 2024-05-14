@@ -66,7 +66,7 @@
                                     $user = auth()->user();
                                 @endphp
                                 <div class="col-sm-6 text-end mb-50">
-                                    <h4 class="inv-title-1">Store</h4>
+                                    <h4 class="inv-title-1">Almacen</h4>
                                     <p class="inv-from-1">{{ Str::title($user->store_name) }}</p>
                                     <p class="inv-from-1">{{ $user->store_phone }}</p>
                                     <p class="inv-from-1">{{ $user->store_email }}</p>

@@ -89,13 +89,12 @@
                             {{ $category->products->count() }}
                         </td>
                         <td class="align-middle text-center d-none d-sm-table-cell" style="width: 15%">
-                            {{ $category->created_at ? $category->created_at->format('d-m-Y') : '--' }}
-                        </td>
+                            {{ $category->created_at ? $category->created_at->format('d-m-Y') : '--' }}                        </td>
                         <td class="align-middle text-center" style="width: 15%">
                             <x-button.show class="btn-icon" route="{{ route('categories.show', $category) }}" />
                             <x-button.edit class="btn-icon" route="{{ route('categories.edit', $category) }}" />
                             <x-button.delete class="btn-icon" route="{{ route('categories.destroy', $category) }}"
-                                onclick="return confirm('Are you sure to remove category {{ $category->name }} ?!')" />
+                                onclick="return confirm('¿Estás seguro de eliminar la categoría {{ $category->name }} ?!')" />
                         </td>
                     </tr>
                 @empty
