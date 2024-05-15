@@ -70,8 +70,8 @@
         Registrase
     </a> --}}
 
-    <span class="form-label-description">
+    {{-- <span class="form-label-description">
         <a href="{{ route('password.request') }}">olvidé la contraseña</a>
-    </span>
+    </span> --}}
 </div>
 @endsection
