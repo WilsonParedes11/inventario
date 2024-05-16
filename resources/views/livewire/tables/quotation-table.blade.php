@@ -112,7 +112,7 @@
                                 {{-- <x-button.edit class="btn-icon" route="{{ route('quotations.edit', $quotation->uuid) }}"/> --}}
                                 <x-button.complete class="btn-icon"
                                     route="{{ route('quotations.update', $quotation->uuid) }}"
-                                    onclick="return confirm('Are you sure to complete quotation no. {{ $quotation->reference }}?')" />
+                                    onclick="return confirm('¿Seguro que deses aprobar esta cotización no. {{ $quotation->reference }}?')" />
                                 <x-button.delete class="btn-icon" route="{{ route('quotations.destroy', $quotation) }}"
                                     onclick="return confirm('Are you sure to cancel Quotation NO. {{ $quotation->reference }}?')" />
                             @endif

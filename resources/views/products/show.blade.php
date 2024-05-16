@@ -23,7 +23,7 @@
             <div class="card">
               <div class="card-body">
                 <h3 class="card-title">
-                  {{ __('Product Image') }}
+                  {{ __('Imagen del Producto') }}
                 </h3>
 
                 <img style="width: 90px;" id="image-preview"

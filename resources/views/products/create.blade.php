@@ -14,7 +14,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h3 class="card-title">
-                                    {{ __('Product Image') }}
+                                    {{ __('Imagen del Producto') }}
                                 </h3>
 
                                 <img class="img-account-profile mb-2" src="{{ asset('assets/img/products/default.webp') }}" alt="" id="image-preview" />
@@ -46,7 +46,7 @@
                             <div class="card-header">
                                 <div>
                                     <h3 class="card-title">
-                                        {{ __('Product Create') }}
+                                        {{ __('Crear Producto') }}
                                     </h3>
                                 </div>
 
@@ -62,6 +62,7 @@
 
                                         <x-input name="name"
                                                  id="name"
+                                                 label="Nombre"
                                                  placeholder="Producto"
                                                  value="{{ old('name') }}"
                                         />
@@ -70,7 +71,7 @@
                                     <div class="col-sm-6 col-md-6">
                                         <div class="mb-3">
                                             <label for="category_id" class="form-label">
-                                                Product category
+                                               Categoria de Producto
                                                 <span class="text-danger">*</span>
                                             </label>
 
@@ -90,7 +91,7 @@
                                                         class="form-select @error('category_id') is-invalid @enderror"
                                                 >
                                                     <option selected="" disabled="">
-                                                        Select a category:
+                                                        Seleccionar categoria:
                                                     </option>
 
                                                     @foreach ($categories as $category)
@@ -112,7 +113,7 @@
                                     <div class="col-sm-6 col-md-6">
                                         <div class="mb-3">
                                             <label class="form-label" for="unit_id">
-                                                {{ __('Unit') }}
+                                                {{ __('Unidades') }}
                                                 <span class="text-danger">*</span>
                                             </label>
 
@@ -132,7 +133,7 @@
                                                         class="form-select @error('unit_id') is-invalid @enderror"
                                                 >
                                                     <option selected="" disabled="">
-                                                        Select a unit:
+                                                        Seleccionar Unidades:
                                                     </option>
 
                                                     @foreach ($units as $unit)
@@ -151,7 +152,7 @@
 
                                     <div class="col-sm-6 col-md-6">
                                         <x-input type="number"
-                                                 label="Buying Price"
+                                                 label="Costo de Compra"
                                                  name="buying_price"
                                                  id="buying_price"
                                                  placeholder="0"
@@ -161,7 +162,7 @@
 
                                     <div class="col-sm-6 col-md-6">
                                         <x-input type="number"
-                                                 label="Selling Price"
+                                                 label="Precio de Venta"
                                                  name="selling_price"
                                                  id="selling_price"
                                                  placeholder="0"
@@ -171,7 +172,7 @@
 
                                     <div class="col-sm-6 col-md-6">
                                         <x-input type="number"
-                                                 label="Quantity"
+                                                 label="Cantidad"
                                                  name="quantity"
                                                  id="quantity"
                                                  placeholder="0"
@@ -181,7 +182,7 @@
 
                                     <div class="col-sm-6 col-md-6">
                                         <x-input type="number"
-                                                 label="Quantity Alert"
+                                                 label="Cantidad de Alerta"
                                                  name="quantity_alert"
                                                  id="quantity_alert"
                                                  placeholder="0"
@@ -191,7 +192,7 @@
 
                                     <div class="col-sm-6 col-md-6">
                                         <x-input type="number"
-                                                 label="Tax"
+                                                 label="IVA"
                                                  name="tax"
                                                  id="tax"
                                                  placeholder="0"
@@ -199,7 +200,7 @@
                                         />
                                     </div>
 
-                                    <div class="col-sm-6 col-md-6">
+                                    {{-- <div class="col-sm-6 col-md-6">
                                         <div class="mb-3">
                                             <label class="form-label" for="tax_type">
                                                 {{ __('Tax Type') }}
@@ -221,19 +222,19 @@
                                             </div>
                                             @enderror
                                         </div>
-                                    </div>
+                                    </div> --}}
 
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label for="notes" class="form-label">
-                                                {{ __('Notes') }}
+                                                {{ __('Notas') }}
                                             </label>
 
                                             <textarea name="notes"
                                                       id="notes"
                                                       rows="5"
                                                       class="form-control @error('notes') is-invalid @enderror"
-                                                      placeholder="Product notes"
+                                                      placeholder="Notas del producto"
                                             ></textarea>
 
                                             @error('notes')
@@ -248,7 +249,7 @@
 
                             <div class="card-footer text-end">
                                 <x-button.save type="submit">
-                                    {{ __('Save') }}
+                                    {{ __('Guardar') }}
                                 </x-button.save>
 
                                 <a class="btn btn-warning" href="{{ url()->previous() }}">

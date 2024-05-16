@@ -2,7 +2,7 @@
     <div class="card-header">
         <div>
             <h3 class="card-title">
-                {{ __('Categories') }}
+                {{ __('Categorias') }}
             </h3>
         </div>
 
@@ -89,7 +89,7 @@
                             {{ $category->products->count() }}
                         </td>
                         <td class="align-middle text-center d-none d-sm-table-cell" style="width: 15%">
-                            {{ $category->created_at ? $category->created_at->format('d-m-Y') : '--' }}                        </td>
+                            {{ $category->created_at ? $category->created_at->format('d-m-Y') : '--' }} </td>
                         <td class="align-middle text-center" style="width: 15%">
                             <x-button.show class="btn-icon" route="{{ route('categories.show', $category) }}" />
                             <x-button.edit class="btn-icon" route="{{ route('categories.edit', $category) }}" />

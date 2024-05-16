@@ -62,7 +62,7 @@ class PosController extends Controller
         if ($validatedData['qty'] > Product::where('id', intval($validatedData['product_id']))->value('quantity')) {
             return redirect()
             ->back()
-            ->with('error', 'The requested quantity is not available in stock.');
+            ->with('error', 'La cantidad solicitada no está disponible en stock.');
         }
         
 
