@@ -43,12 +43,12 @@
                         </div>
 
                         <div class="card-footer text-end">
-                            <x-button type="submit">{{ __('Save') }}</x-button>
+                            <x-button type="submit">{{ __('Guardar') }}</x-button>
                         </div>
                     </x-form>
                 </div>
             </div>
-
+{{-- 
             <div class="col-lg-4">
                 <div class="card mb-4">
                     <div class="card-header">
@@ -85,7 +85,7 @@
                         </button>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 @endsection

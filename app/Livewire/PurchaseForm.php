@@ -47,7 +47,7 @@ class PurchaseForm extends Component
         {
             if (!$invoiceProduct['is_saved'])
             {
-                $this->addError('invoiceProducts.' . $key, 'This line must be saved before creating a new one.');
+                $this->addError('invoiceProducts.' . $key, 'Esta línea debe ser guardada antes de crear una nueva.');
                 return;
             }
         }

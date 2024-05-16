@@ -28,13 +28,14 @@
             <div class="ms-auto text-secondary">
                 Buscar:
                 <div class="ms-2 d-inline-block">
-                    <input type="text" wire:model.live="search" class="form-control form-control-sm" aria-label="Search invoice">
+                    <input type="text" wire:model.live="search" class="form-control form-control-sm"
+                        aria-label="Search invoice">
                 </div>
             </div>
         </div>
     </div>
 
-    <x-spinner.loading-spinner/>
+    <x-spinner.loading-spinner />
 
     <div class="table-responsive">
         <table wire:loading.remove class="table table-bordered card-table table-vcenter text-nowrap datatable">
@@ -79,54 +80,59 @@
                 </tr>
             </thead>
             <tbody>
-            @forelse ($purchases as $purchase)
-                <tr>
-                    <td class="align-middle text-center">
-                        {{ $loop->iteration }}
-                    </td>
-                    <td class="align-middle text-center">
-                        {{ $purchase->purchase_no }}
-                    </td>
-                    <td class="align-middle text-center">
-                        {{ $purchase->supplier->name }}
-                    </td>
-                    <td class="align-middle text-center">
-                        {{ $purchase->date->format('d-m-Y') }}
-                    </td>
-                    <td class="align-middle text-center">
-                        {{ Number::currency($purchase->total_amount, 'USD') }}
-                    </td>
+                @forelse ($purchases as $purchase)
+                    <tr>
+                        <td class="align-middle text-center">
+                            {{ $loop->iteration }}
+                        </td>
+                        <td class="align-middle text-center">
+                            {{ $purchase->purchase_no }}
+                        </td>
+                        <td class="align-middle text-center">
+                            {{ $purchase->supplier->name }}
+                        </td>
+                        <td class="align-middle text-center">
+                            {{ $purchase->date->format('d-m-Y') }}
+                        </td>
+                        <td class="align-middle text-center">
+                            {{ Number::currency($purchase->total_amount, 'USD') }}
+                        </td>
 
-                    @if ($purchase->status === \App\Enums\PurchaseStatus::APPROVED)
-                        <td class="align-middle text-center">
-                            <span class="badge bg-green text-white text-uppercase">
-                                {{ __('APROBADA') }}
-                            </span>
-                        </td>
-                        <td class="align-middle text-center">
-                            <x-button.show class="btn-icon" route="{{ route('purchases.edit', $purchase->uuid) }}"/>
-                        </td>
-                    @else
-                        <td class="align-middle text-center">
-                            <span class="badge bg-orange text-white text-uppercase">
-                                {{ __('PENDIENTE') }}
-                            </span>
-                        </td>
-                        <td class="align-middle text-center" style="width: 10%">
-                            <x-button.show class="btn-icon" route="{{ route('purchases.edit', $purchase->uuid) }}"/>
-                            {{-- <x-button.complete class="btn-icon"  onclick="return confirm('Are you sure to approve purchase no. {{ $purchase->purchase_no }}!') route="{{ route('purchases.update', $purchase->uuid) }}"/> --}}
-                            <x-button.complete class="btn-icon" route="{{ route('purchases.update', $purchase->uuid) }}" onclick="return confirm('Are you sure to approve purchase no. {{ $purchase->purchase_no }}?')"/>
-                            <x-button.delete class="btn-icon" onclick="return confirm('Are you sure!')" route="{{ route('purchases.delete', $purchase->uuid) }}"/>
-                        </td>
-                    @endif
-                </tr>
+                        @if ($purchase->status === \App\Enums\PurchaseStatus::APPROVED)
+                            <td class="align-middle text-center">
+                                <span class="badge bg-green text-white text-uppercase">
+                                    {{ __('APROBADA') }}
+                                </span>
+                            </td>
+                            <td class="align-middle text-center">
+                                <x-button.show class="btn-icon"
+                                    route="{{ route('purchases.edit', $purchase->uuid) }}" />
+                            </td>
+                        @else
+                            <td class="align-middle text-center">
+                                <span class="badge bg-orange text-white text-uppercase">
+                                    {{ __('PENDIENTE') }}
+                                </span>
+                            </td>
+                            <td class="align-middle text-center" style="width: 10%">
+                                <x-button.show class="btn-icon"
+                                    route="{{ route('purchases.edit', $purchase->uuid) }}" />
+                                {{-- <x-button.complete class="btn-icon"  onclick="return confirm('Are you sure to approve purchase no. {{ $purchase->purchase_no }}!') route="{{ route('purchases.update', $purchase->uuid) }}"/> --}}
+                                <x-button.complete class="btn-icon"
+                                    route="{{ route('purchases.update', $purchase->uuid) }}"
+                                    onclick="return confirm('¿Seguro que desea aprobar la compra No. {{ $purchase->purchase_no }}?')" />
+                                <x-button.delete class="btn-icon" onclick="return confirm('Are you sure!')"
+                                    route="{{ route('purchases.delete', $purchase->uuid) }}" />
+                            </td>
+                        @endif
+                    </tr>
                 @empty
-                <tr>
-                    <td class="align-middle text-center" colspan="7">
-                        No results found
-                    </td>
-                </tr>
-            @endforelse
+                    <tr>
+                        <td class="align-middle text-center" colspan="7">
+                            No results found
+                        </td>
+                    </tr>
+                @endforelse
             </tbody>
         </table>
     </div>
@@ -138,7 +144,7 @@
         </p>
 
         <ul class="pagination m-0 ms-auto">
-        {{ $purchases->links() }}
+            {{ $purchases->links() }}
         </ul>
     </div>
 </div>

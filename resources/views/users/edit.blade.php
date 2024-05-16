@@ -25,7 +25,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h3 class="card-title">
-                                    {{ __('Product Image') }}
+                                    {{ __('Imagen del Producto') }}
                                 </h3>
 
                                 <img class="img-account-profile rounded-circle mb-2" src="{{ $user->photo ? asset('storage/profile/'.$user->photo) : asset('assets/img/demo/user-placeholder.svg') }}" alt="" id="image-preview" />
@@ -68,7 +68,7 @@
                                 </div>
                                 <div class="card-footer text-end">
                                     <button type="submit" class="btn btn-primary">
-                                        {{ __('Save') }}
+                                        {{ __('Guardar') }}
                                     </button>
 
                                     <a class="btn btn-outline-warning" href="{{ route('users.index') }}">
@@ -104,7 +104,7 @@
                                 <div class="card-footer text-end">
                                     {{--- onclick="return confirm('Do you want to change the password?')" ---}}
                                     <button type="submit" class="btn btn-primary">
-                                        {{ __('Save') }}
+                                        {{ __('Guardar') }}
                                     </button>
 
                                     <a class="btn btn-outline-warning" href="{{ route('users.index') }}">

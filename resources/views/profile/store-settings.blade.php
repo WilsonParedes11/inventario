@@ -44,7 +44,7 @@
                         </div>
 
                         <div class="card-footer text-end">
-                            <x-button type="submit">{{ __('Save') }}</x-button>
+                            <x-button type="submit">{{ __('Guardar') }}</x-button>
                         </div>
                     </x-form>
                 </div>
