@@ -15,21 +15,21 @@ class UnitSeeder extends Seeder
     {
         $units = collect([
             [
-                'name' => 'Meters',
-                'slug' => 'meters',
-                'short_code' => 'm',
+                'name' => 'Litros',
+                'slug' => 'litros',
+                'short_code' => 'l',
                 'user_id'=>1
             ],
             [
-                'name' => 'Centimeters',
-                'slug' => 'centimeters',
-                'short_code' => 'cm',
+                'name' => 'Kilogramos',
+                'slug' => 'kilogramos',
+                'short_code' => 'kg',
                 'user_id'=>1
             ],
             [
-                'name' => 'Piece',
-                'slug' => 'piece',
-                'short_code' => 'pc',
+                'name' => 'Galones',
+                'slug' => 'galones',
+                'short_code' => 'gl',
                 'user_id'=>1
             ]
         ]);

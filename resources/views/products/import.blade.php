@@ -9,7 +9,7 @@
             <x-card>
                 <x-slot:header>
                     <x-slot:title>
-                        {{ __('Importar Products') }}
+                        {{ __('Importar Productos') }}
                     </x-slot:title>
 
                     <x-slot:actions>

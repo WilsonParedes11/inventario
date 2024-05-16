@@ -17,13 +17,13 @@
                         <x-icon.plus />
                         {{ __('Crear Producto') }}
                     </a>
-                    <a href="{{ route('products.import.view') }}" class="dropdown-item">
+                    {{-- <a href="{{ route('products.import.view') }}" class="dropdown-item">
                         <x-icon.plus />
-                        {{ __('Importar Products') }}
-                    </a>
+                        {{ __('Importar Productos') }}
+                    </a> --}}
                     <a href="{{ route('products.export.store') }}" class="dropdown-item">
                         <x-icon.plus />
-                        {{ __('Exportar Products') }}
+                        {{ __('Exportar Productos') }}
                     </a>
                 </div>
             </div>
