@@ -60,7 +60,7 @@
                                         :data="$suppliers"
                                     />
 
-                                    <div class="col-md-4">
+                                    {{-- <div class="col-md-4">
                                         <label for="reference" class="form-label required">
                                             {{ __('Referencia') }}
                                         </label>
@@ -77,7 +77,7 @@
                                             {{ $message }}
                                         </div>
                                         @enderror
-                                    </div>
+                                    </div> --}}
                                 </div>
 
                                 @livewire('purchase-form')
