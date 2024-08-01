@@ -119,10 +119,10 @@
                             {{ $product->quantity }}
                         </td>
                         <td class="align-middle text-center" style="width: 10%">
-                            <x-button.show class="btn-icon" route="{{ route('products.show', $product->uuid) }}" />
-                            <x-button.edit class="btn-icon" route="{{ route('products.edit', $product->uuid) }}" />
+                            <x-button.show class="btn-icon" route="{{ route('products.show', $product->uuid) }}" data-bs-toggle="tooltip" data-bs-placement="top" title="Ver detalles" />
+                            <x-button.edit class="btn-icon" route="{{ route('products.edit', $product->uuid) }}" data-bs-toggle="tooltip" data-bs-placement="top" title="Actualizar producto" />
                             <x-button.delete class="btn-icon" route="{{ route('products.destroy', $product->uuid) }}"
-                                onclick="return confirm('Are you sure to delete product {{ $product->name }} ?')" />
+                                onclick="return confirm('¿Estás seguro de eliminar el producto? {{ $product->name }} ?')" data-bs-toggle="tooltip" data-bs-placement="top" title="Eliminar producto" />
                         </td>
                     </tr>
                 @empty
@@ -147,3 +147,11 @@
         </ul>
     </div>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    });
+</script>

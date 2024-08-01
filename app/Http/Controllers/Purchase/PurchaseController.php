@@ -79,7 +79,7 @@ class PurchaseController extends Controller
         if ($request->invoiceProducts == null || $request->invoiceProducts[0]['total'] == 0) {
             return redirect()
                 ->back()
-                ->with('error', 'Please add product!');
+                ->with('error', '¡Por favor guarde el producto!');
         }
         $purchase = Purchase::create([
             'purchase_no' => IdGenerator::generate([
