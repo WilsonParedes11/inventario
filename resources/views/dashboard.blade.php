@@ -31,7 +31,7 @@
     <div class="page-body">
         <div class="container-xl">
             <div class="row row-deck row-cards">
-{{-- 
+{{--
                 <div class="col-sm-6 col-lg-3">
                     <div class="card">
                         <div class="card-body">
@@ -186,7 +186,7 @@
                 <div class="col-12">
                     <div class="row row-cards">
                         <div class="col-sm-6 col-lg-3">
-                            <div class="card card-sm">
+                            <div class="card card-lg">
                                 <div class="card-body">
                                     <div class="row align-items-center">
                                         <div class="col-auto">
@@ -223,7 +223,7 @@
                             </div>
                         </div>
                         <div class="col-sm-6 col-lg-3">
-                            <div class="card card-sm">
+                            <div class="card card-lg">
                                 <div class="card-body">
                                     <div class="row align-items-center">
                                         <div class="col-auto">
@@ -254,7 +254,7 @@
                             </div>
                         </div>
                         <div class="col-sm-6 col-lg-3">
-                            <div class="card card-sm">
+                            <div class="card card-lg">
                                 <div class="card-body">
                                     <div class="row align-items-center">
                                         <div class="col-auto">
@@ -286,7 +286,7 @@
                             </div>
                         </div>
                         <div class="col-sm-6 col-lg-3">
-                            <div class="card card-sm">
+                            <div class="card card-lg">
                                 <div class="card-body">
                                     <div class="row align-items-center">
                                         <div class="col-auto">

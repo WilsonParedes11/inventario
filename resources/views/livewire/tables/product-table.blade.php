@@ -21,10 +21,10 @@
                         <x-icon.plus />
                         {{ __('Importar Productos') }}
                     </a> --}}
-                    <a href="{{ route('products.export.store') }}" class="dropdown-item">
+                    {{-- <a href="{{ route('products.export.store') }}" class="dropdown-item">
                         <x-icon.plus />
                         {{ __('Exportar Productos') }}
-                    </a>
+                    </a> --}}
                 </div>
             </div>
         </div>
