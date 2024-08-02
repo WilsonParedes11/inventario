@@ -4,7 +4,7 @@ namespace App\Livewire\Tables;
 
 use Livewire\Component;
 use App\Models\Product;
-use App\Models\Movement; // Asegúrate de importar el modelo Movement si aún no lo has hecho
+use App\Models\Movement;
 use Livewire\WithPagination;
 
 class TrakingTable extends Component
@@ -15,7 +15,7 @@ class TrakingTable extends Component
     public $search = '';
     public $sortField = 'id';
     public $sortAsc = false;
-    public $selectedProductId = null; // Nueva propiedad para almacenar el ID del producto seleccionado
+    public $selectedProductId = null;
 
     public function sortBy($field): void
     {
@@ -27,9 +27,14 @@ class TrakingTable extends Component
         $this->sortField = $field;
     }
 
-    public function loadMovements($productId)
+    public function loadMovements($productInput)
     {
-        $this->selectedProductId = $productId;
+        if (is_numeric($productInput)) {
+            $this->selectedProductId = $productInput;
+        } else {
+            $product = Product::where('name', $productInput)->first();
+            $this->selectedProductId = $product ? $product->id : null;
+        }
     }
 
     public function render()
@@ -39,12 +44,12 @@ class TrakingTable extends Component
             ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
             ->paginate($this->perPage);
 
-        $movements = []; // Inicializamos $movements con null para evitar errores si no se encuentra ningún producto
+        $movements = [];
         $query = [];
-        if ($this->selectedProductId) { // Verificamos si se ha seleccionado un producto
+        if ($this->selectedProductId) {
             $query = Product::find($this->selectedProductId);
 
-            if ($query) { // Verificamos si se encontró el producto
+            if ($query) {
                 $orderDetails = $query->orderDetails()->select(
                     'id',
                     'created_at as date',
@@ -81,7 +86,6 @@ class TrakingTable extends Component
                 }
                 $movements = $movements->sortByDesc('date');
                 $search = $this->search;
-                // Aplicar búsqueda al campo 'date' después de ordenar la colección
                 $movements = $movements->filter(function ($movement) use ($search) {
                     return stripos($movement['date'], $search) !== false;
                 });
