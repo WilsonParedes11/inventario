@@ -179,6 +179,7 @@
                                     <input type="number"
                                            id="pay"
                                            name="pay"
+                                           step="any"
                                            class="form-control @error('pay') is-invalid @enderror"
                                            value="{{ old('pay') }}"
                                            required

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Supplier;
 use App\Http\Requests\Supplier\StoreSupplierRequest;
 use App\Http\Requests\Supplier\UpdateSupplierRequest;
+use Exception;
 use Illuminate\Support\Str;
 
 
@@ -107,18 +108,24 @@ class SupplierController extends Controller
 
     public function destroy($uuid)
     {
-        $supplier = Supplier::where("uuid", $uuid)->firstOrFail();
-        /**
-         * Delete photo if exists.
-         */
-        if ($supplier->photo) {
-            unlink(public_path('storage/suppliers/') . $supplier->photo);
+        try {
+            $supplier = Supplier::where("uuid", $uuid)->firstOrFail();
+            /**
+             * Delete photo if exists.
+             */
+            if ($supplier->photo) {
+                unlink(public_path('storage/suppliers/') . $supplier->photo);
+            }
+
+            $supplier->delete();
+
+            return redirect()
+                ->route('suppliers.index')
+                ->with('success', 'Proveedor eliminado con exito!');
+        } catch (Exception $e) {
+            return redirect()
+                ->back()
+                ->with('success', 'El proveedor no se ha podido eliminar porque cuenta con compras realizadas!');
         }
-
-        $supplier->delete();
-
-        return redirect()
-            ->route('suppliers.index')
-            ->with('success', 'Proveedor eliminado con exito!');
     }
 }

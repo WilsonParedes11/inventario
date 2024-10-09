@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Customer;
 use App\Http\Requests\Customer\StoreCustomerRequest;
 use App\Http\Requests\Customer\UpdateCustomerRequest;
+use Exception;
 use Illuminate\Support\Str;
 
 class CustomerController extends Controller
@@ -107,15 +108,20 @@ class CustomerController extends Controller
 
     public function destroy($uuid)
     {
-        $customer = Customer::where('uuid', $uuid)->firstOrFail();
-        if ($customer->photo) {
-            unlink(public_path('storage/') . $customer->photo);
+        try {
+            $customer = Customer::where('uuid', $uuid)->firstOrFail();
+            if ($customer->photo) {
+                unlink(public_path('storage/') . $customer->photo);
+            }
+            $customer->delete();
+
+            return redirect()
+                ->back()
+                ->with('success', 'El cliente ha sido eliminado!');
+        } catch (Exception $e) {
+            return redirect()
+                ->back()
+                ->with('success', 'El cliente no se ha podido eliminar porque cuenta con ventas realizadas!');
         }
-
-        $customer->delete();
-
-        return redirect()
-            ->back()
-            ->with('success', 'El cliente ha sido eliminado!');
     }
 }

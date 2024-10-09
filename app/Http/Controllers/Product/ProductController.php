@@ -8,6 +8,7 @@ use App\Http\Requests\Product\UpdateProductRequest;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Unit;
+use Exception;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Illuminate\Http\Request;
 use Picqer\Barcode\BarcodeGeneratorHTML;
@@ -217,6 +218,7 @@ class ProductController extends Controller
 
     public function destroy($uuid)
     {
+        try{
         $product = Product::where("uuid", $uuid)->firstOrFail();
         /**
          * Delete photo if exists.
@@ -233,5 +235,10 @@ class ProductController extends Controller
         return redirect()
             ->route('products.index')
             ->with('success', 'El producto ha sido eliminado!');
+        } catch (Exception $e) {
+            return redirect()
+                ->back()
+                ->with('success', 'No se ha podido eliminar porque cuenta con datos asociados!');
+        }
     }
 }

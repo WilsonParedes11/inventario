@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use App\Http\Requests\Quotation\StoreQuotationRequest;
+use Exception;
 use Illuminate\Support\Facades\Request;
 use Str;
 
@@ -109,6 +110,7 @@ class QuotationController extends Controller
 
     public function destroy(Quotation $quotation)
     {
+        try{
         $quotation->update([
             "status" => 2
         ]);
@@ -118,6 +120,11 @@ class QuotationController extends Controller
             ->route('quotations.index', [
                 'quotations' => $quotations
             ]);
+        } catch (Exception $e) {
+            return redirect()
+                ->back()
+                ->with('success', 'No se ha podido eliminar porque cuenta con datos asociados!');
+        }
     }
 
     // complete quotaion method

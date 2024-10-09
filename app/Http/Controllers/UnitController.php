@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Unit;
 use App\Http\Requests\Unit\StoreUnitRequest;
 use App\Http\Requests\Unit\UpdateUnitRequest;
+use Exception;
 use Str;
 
 class UnitController extends Controller
@@ -69,10 +70,15 @@ class UnitController extends Controller
 
     public function destroy(Unit $unit)
     {
-        $unit->delete();
-
-        return redirect()
-            ->route('units.index')
-            ->with('success', 'La unidad ha sido eliminada!');
+        try {
+            $unit->delete();
+            return redirect()
+                ->route('units.index')
+                ->with('success', 'La unidad ha sido eliminada!');
+        } catch (Exception $e) {
+            return redirect()
+                ->back()
+                ->with('success', 'No se ha podido eliminar porque cuenta con datos asociados!');
+        }
     }
 }

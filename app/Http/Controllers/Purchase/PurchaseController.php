@@ -145,12 +145,18 @@ class PurchaseController extends Controller
 
     public function destroy($uuid)
     {
+        try{
         $purchase = Purchase::where('uuid', $uuid)->firstOrFail();
         $purchase->delete();
 
         return redirect()
             ->route('purchases.index')
             ->with('success', 'La compra ha sido eliminada!');
+        } catch (Exception $e) {
+            return redirect()
+                ->back()
+                ->with('success', 'No se ha podido eliminar porque cuenta con datos asociados!');
+        }
     }
 
 

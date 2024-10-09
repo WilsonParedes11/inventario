@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Customer;
+use Exception;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
@@ -24,7 +25,7 @@ class PosController extends Controller
         ]);
     }
 
-    public function addCartItem (Request $request)
+    public function addCartItem(Request $request)
     {
         $request->all();
         //dd($request);
@@ -57,14 +58,14 @@ class PosController extends Controller
             'qty' => 'required|numeric',
             'product_id' => 'numeric'
         ];
-        
+
         $validatedData = $request->validate($rules);
         if ($validatedData['qty'] > Product::where('id', intval($validatedData['product_id']))->value('quantity')) {
             return redirect()
-            ->back()
-            ->with('error', 'La cantidad solicitada no está disponible en stock.');
+                ->back()
+                ->with('error', 'La cantidad solicitada no está disponible en stock.');
         }
-        
+
 
         Cart::update($rowId, $validatedData['qty']);
 
@@ -75,10 +76,16 @@ class PosController extends Controller
 
     public function deleteCartItem(String $rowId)
     {
-        Cart::remove($rowId);
+        try {
+            Cart::remove($rowId);
 
-        return redirect()
-            ->back()
-            ->with('success', 'El producto ha sido borrado del carrito!');
+            return redirect()
+                ->back()
+                ->with('success', 'El producto ha sido borrado del carrito!');
+        } catch (Exception $e) {
+            return redirect()
+                ->back()
+                ->with('success', 'No se ha podido eliminar porque cuenta con datos asociados!');
+        }
     }
 }

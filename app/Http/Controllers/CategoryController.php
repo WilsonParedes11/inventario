@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Http\Requests\Category\StoreCategoryRequest;
 use App\Http\Requests\Category\UpdateCategoryRequest;
+use Exception;
 use Str;
 
 class CategoryController extends Controller
@@ -26,7 +27,7 @@ class CategoryController extends Controller
     public function store(StoreCategoryRequest $request)
     {
         Category::create([
-            "user_id"=>auth()->id(),
+            "user_id" => auth()->id(),
             "name" => $request->name,
             "slug" => Str::slug($request->name)
         ]);
@@ -64,10 +65,16 @@ class CategoryController extends Controller
 
     public function destroy(Category $category)
     {
-        $category->delete();
+        try {
+            $category->delete();
 
-        return redirect()
-            ->route('categories.index')
-            ->with('success', 'La categoría ha sido eliminada!');
+            return redirect()
+                ->route('categories.index')
+                ->with('success', 'La categoría ha sido eliminada!');
+        } catch (Exception $e) {
+            return redirect()
+                ->back()
+                ->with('success', 'No se ha podido eliminar porque cuenta con datos asociados!');
+        }
     }
 }
