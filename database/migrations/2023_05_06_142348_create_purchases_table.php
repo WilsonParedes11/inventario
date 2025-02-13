@@ -24,7 +24,7 @@ return new class extends Migration
                 ->default(0)
                 ->comment('0=Pending, 1=Approved');
 
-            $table->integer('total_amount'); // old: total_amount
+            $table->double('total_amount'); // old: total_amount
             $table->foreignIdFor(\App\Models\User::class, 'created_by');
             $table->foreignIdFor(\App\Models\User::class, 'updated_by')
                 ->nullable();

@@ -27,12 +27,12 @@ return new class extends Migration
             $table->string('product_code');
 
             $table->integer('quantity');
-            $table->integer('price');
-            $table->integer('unit_price');
-            $table->integer('sub_total');
-            $table->integer('product_discount_amount');
+            $table->double('price');
+            $table->double('unit_price');
+            $table->double('sub_total');
+            $table->double('product_discount_amount');
             $table->string('product_discount_type')->default('fixed');
-            $table->integer('product_tax_amount');
+            $table->double('product_tax_amount');
 
             $table->timestamps();
         });

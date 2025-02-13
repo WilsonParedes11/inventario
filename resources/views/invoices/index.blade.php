@@ -149,9 +149,9 @@
                             <label class="small mb-1" for="payment_type">Payment <span class="text-danger">*</span></label>
                             <select class="form-control @error('payment_type') is-invalid @enderror" id="payment_type" name="payment_type">
                                 <option selected="" disabled="">Select a payment:</option>
-                                <option value="HandCash">HandCash</option>
+                                <option value="Dinero en efectivo">Dinero en efectivo</option>
                                 <option value="Cheque">Cheque</option>
-                                <option value="Due">Due</option>
+                                <option value="Pendiente">Pendiente</option>
                             </select>
                             @error('payment_type')
                             <div class="invalid-feedback">

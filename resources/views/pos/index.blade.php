@@ -71,7 +71,7 @@
                                                         @method('delete')
                                                         @csrf
                                                         <button type="submit" class="btn btn-outline-danger btn-sm"
-                                                            onclick="return confirm('Are you sure you want to delete this record?')">
+                                                            onclick="return confirm('¿Está seguro de que desea eliminar este registro?')">
                                                             <i class="far fa-trash-alt"></i>
                                                         </button>
                                                     </form>

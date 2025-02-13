@@ -151,24 +151,26 @@
                                     </div>
 
                                     <div class="col-sm-6 col-md-6">
-                                        <x-input type="number"
+                                        <x-input type="text"  {{-- Cambiado a type="text" --}}
                                                  label="Costo de Compra"
                                                  name="buying_price"
-                                                 step="2"
                                                  id="buying_price"
-                                                 placeholder="0"
+                                                 placeholder="0.00"  {{-- Placeholder más apropiado --}}
                                                  value="{{ old('buying_price') }}"
+                                                 step="any"  {{-- Añadido para mejor experiencia (opcional) --}}
+                                                 pattern="[0-9]*(\.[0-9]+)?"  {{-- Expresión regular para validar decimales (opcional) --}}
                                         />
                                     </div>
 
                                     <div class="col-sm-6 col-md-6">
-                                        <x-input type="number"
+                                        <x-input type="text"  {{-- Cambiado a type="text" --}}
                                                  label="Precio de Venta"
                                                  name="selling_price"
-                                                 step="2"
                                                  id="selling_price"
-                                                 placeholder="0"
+                                                 placeholder="0.00"  {{-- Placeholder más apropiado --}}
                                                  value="{{ old('selling_price') }}"
+                                                 step="any"  {{-- Añadido para mejor experiencia (opcional) --}}
+                                                 pattern="[0-9]*(\.[0-9]+)?"  {{-- Expresión regular para validar decimales (opcional) --}}
                                         />
                                     </div>
 

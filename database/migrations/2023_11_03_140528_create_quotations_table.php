@@ -24,11 +24,11 @@ return new class extends Migration
 
             $table->string('customer_name');
             $table->integer('tax_percentage')->default(0);
-            $table->integer('tax_amount')->default(0);
+            $table->double('tax_amount')->default(0);
             $table->integer('discount_percentage')->default(0);
-            $table->integer('discount_amount')->default(0);
-            $table->integer('shipping_amount')->default(0);
-            $table->integer('total_amount');
+            $table->double('discount_amount')->default(0);
+            $table->double('shipping_amount')->default(0);
+            $table->double('total_amount');
             $table->tinyInteger('status')->comment('0 - Pendiente / 1 - Completado / 2 - Cancelado');;
             $table->text('note')->nullable();
             $table->uuid();
