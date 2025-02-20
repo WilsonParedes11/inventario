@@ -145,13 +145,13 @@ class PurchaseController extends Controller
 
     public function destroy($uuid)
     {
-        try{
-        $purchase = Purchase::where('uuid', $uuid)->firstOrFail();
-        $purchase->delete();
+        try {
+            $purchase = Purchase::where('uuid', $uuid)->firstOrFail();
+            $purchase->delete();
 
-        return redirect()
-            ->route('purchases.index')
-            ->with('success', 'La compra ha sido eliminada!');
+            return redirect()
+                ->route('purchases.index')
+                ->with('success', 'La compra ha sido eliminada!');
         } catch (Exception $e) {
             return redirect()
                 ->back()
@@ -189,14 +189,35 @@ class PurchaseController extends Controller
         $sDate = $validatedData['start_date'];
         $eDate = $validatedData['end_date'];
 
+        // $purchases = DB::table('purchase_details')
+        //     ->join('products', 'purchase_details.product_id', '=', 'products.id')
+        //     ->join('purchases', 'purchase_details.purchase_id', '=', 'purchases.id')
+        //     ->join('users', 'users.id', '=', 'purchases.created_by')
+        //     ->whereBetween('purchases.updated_at', [$sDate, $eDate])
+        //     ->where('purchases.status', '1')
+        //     ->select('purchases.purchase_no', 'purchases.updated_at', 'purchases.supplier_id', 'products.code', 'products.name', 'purchase_details.quantity', 'purchase_details.unitcost', 'purchase_details.total', 'users.name as created_by')
+        //     ->get();
+
         $purchases = DB::table('purchase_details')
             ->join('products', 'purchase_details.product_id', '=', 'products.id')
             ->join('purchases', 'purchase_details.purchase_id', '=', 'purchases.id')
             ->join('users', 'users.id', '=', 'purchases.created_by')
-            ->whereBetween('purchases.updated_at', [$sDate, $eDate])
-            ->where('purchases.status', '1')
-            ->select('purchases.purchase_no', 'purchases.updated_at', 'purchases.supplier_id', 'products.code', 'products.name', 'purchase_details.quantity', 'purchase_details.unitcost', 'purchase_details.total', 'users.name as created_by')
+            ->whereDate('purchases.updated_at', '>=', $sDate)
+            ->whereDate('purchases.updated_at', '<=', $eDate)
+            ->where('purchases.status', 1)
+            ->select(
+                'purchases.purchase_no',
+                'purchases.updated_at',
+                'purchases.supplier_id',
+                'products.code',
+                'products.name',
+                'purchase_details.quantity',
+                'purchase_details.unitcost',
+                'purchase_details.total',
+                'users.name as created_by'
+            )
             ->get();
+
 
         $purchase_array[] = array(
             'Fecha',
@@ -238,7 +259,7 @@ class PurchaseController extends Controller
             $spreadSheet->getActiveSheet()->fromArray($products);
             $Excel_writer = new Xls($spreadSheet);
             header('Content-Type: application/vnd.ms-excel');
-            header('Content-Disposition: attachment;filename="purchase-report.xls"');
+            header('Content-Disposition: attachment;filename="informe-de-compras.xls"');
             header('Cache-Control: max-age=0');
             ob_end_clean();
             $Excel_writer->save('php://output');
